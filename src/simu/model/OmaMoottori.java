@@ -6,6 +6,7 @@ import simu.framework.Kello;
 import simu.framework.Moottori;
 import simu.framework.Saapumisprosessi;
 import simu.framework.Tapahtuma;
+import simu.framework.Trace;
 
 public class OmaMoottori extends Moottori{
 	
@@ -59,7 +60,11 @@ public class OmaMoottori extends Moottori{
 	@Override
 	protected void tulokset() {	
 		System.out.println("Simulointi päättyi kello " + Kello.getInstance().getAika());
-		System.out.println("Tulokset ... puuttuvat vielä");
+		Trace.out(Trace.Level.INFO,"Lääkäri palveli " + laakari.getPalvellutAsiakkaat() + " potilasta.");
+		Trace.out(Trace.Level.INFO,"Sairaanhoitaja palveli " + sairaanhoitaja.getPalvellutAsiakkaat() + " potilasta.");
+		Trace.out(Trace.Level.INFO,"Lääkärin kustannukset " + laakari.getLaakarinKustannukset() + " euroa.");
+		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
+		
 	}
 
 	
