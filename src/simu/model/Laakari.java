@@ -8,8 +8,7 @@ import simu.framework.Tapahtuma;
 import simu.framework.Tapahtumalista;
 import simu.framework.Trace;
 
-// TODO:
-// Palvelupistekohtaiset toiminnallisuudet, laskutoimitukset (+ tarvittavat muuttujat) ja raportointi koodattava
+
 public class Laakari {
 
 	private LinkedList<Asiakas> jono = new LinkedList<Asiakas>(); // Tietorakennetoteutus
@@ -20,10 +19,7 @@ public class Laakari {
     private int palkka;
     private double tyotunnit;
     private int palvellutAsiakkaat;
-    
-	
-	//JonoStartegia strategia; //optio: asiakkaiden järjestys
-	
+
 	private boolean varattu = false;
 
 
@@ -35,17 +31,14 @@ public class Laakari {
 				
 	}
 
-
 	public void lisaaJonoon(Asiakas a){   // Jonon 1. asiakas aina palvelussa
 		jono.add(a);
 		
 	}
-
 	public Asiakas otaJonosta(){  // Poistetaan palvelussa ollut
 		varattu = false;
 		return jono.poll();
 	}
-
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
 		if(jono.peek() != null){
             Trace.out(Trace.Level.INFO, "Lääkärin Jonossa ei ketään");
@@ -56,13 +49,11 @@ public class Laakari {
         tyotunnit+=palveluaika;
         palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi,Kello.getInstance().getAika()+palveluaika));
+
 	}
-
-
 	public boolean onVarattu(){
 		return varattu;
 	}
-
 
 	public boolean onJonossa(){
 		return jono.size() != 0;

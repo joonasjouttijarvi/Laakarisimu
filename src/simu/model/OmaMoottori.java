@@ -52,8 +52,7 @@ public class OmaMoottori extends Moottori{
 				a.raportti();
 				break;
 			default:
-				break; 
-			
+				break;
 		}	
 	}
 

@@ -3,8 +3,7 @@ package simu.framework;
 import simu.model.TapahtumanTyyppi;
 
 public class Tapahtuma implements Comparable<Tapahtuma> {
-	
-		
+
 	private TapahtumanTyyppi tyyppi;
 	private double aika;
 	
@@ -12,7 +11,7 @@ public class Tapahtuma implements Comparable<Tapahtuma> {
 		this.tyyppi = tyyppi;
 		this.aika = aika;
 	}
-	
+
 	public void setTyyppi(TapahtumanTyyppi tyyppi) {
 		this.tyyppi = tyyppi;
 	}
@@ -32,8 +31,4 @@ public class Tapahtuma implements Comparable<Tapahtuma> {
 		else if (this.aika > arg.aika) return 1;
 		return 0;
 	}
-	
-	
-	
-
 }

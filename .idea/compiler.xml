@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="simulaattorinrunko" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="simulaattorinrunko" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

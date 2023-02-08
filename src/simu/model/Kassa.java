@@ -18,7 +18,7 @@ public class Kassa {
 	private TapahtumanTyyppi skeduloitavanTapahtumanTyyppi; 
     private double tulo;
 
-	//Jono strategia asiakkaiden kiireellisyyden mukaan
+
 	
 	private boolean varattu = false;
 
@@ -29,8 +29,6 @@ public class Kassa {
 		this.skeduloitavanTapahtumanTyyppi = tyyppi;
 				
 	}
-
-
 	public void lisaaJonoon(Asiakas a){   // Jonon 1. asiakas aina palvelussa
         jono.add(a);
 	}
@@ -45,6 +43,8 @@ public class Kassa {
 		Trace.out(Trace.Level.INFO, "Asiakas" + jono.peek().getId()+" Maksaa ja lähtee");
 		varattu = true;
 		double palveluaika = generator.sample();
+		//TODO:
+		//laakariaseman tulot(asiakkaiden maksamat maksut)
         tulo+= palveluaika*4;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi,Kello.getInstance().getAika()+palveluaika));
 	}
