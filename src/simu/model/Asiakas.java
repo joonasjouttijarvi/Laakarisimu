@@ -20,6 +20,14 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo "+saapumisaika);
 	}
 
+	public boolean tarvitseekoLaakaria(){
+		if (Math.random()<0.25){
+			System.out.println("Asiakas " + id + " tarvitsee lääkärin apua");
+			return true;		
+		}
+		return false;
+	}
+
 	public double getPoistumisaika() {
 		return poistumisaika;
 	}
