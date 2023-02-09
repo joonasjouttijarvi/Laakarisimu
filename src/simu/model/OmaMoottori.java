@@ -40,7 +40,10 @@ public class OmaMoottori extends Moottori{
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
-				laakari.lisaaJonoon(a);
+				if (a.tarvitseekoLaakaria()){
+					laakari.lisaaJonoon(a);
+				}
+				kassa.lisaaJonoon(a);				
 				break;
 			case LAAKARIN_PALVELU:
 				a = laakari.otaJonosta();
