@@ -72,5 +72,4 @@ public class Sairaanhoitaja {
 		return palvellutAsiakkaat;
 	}
 
-
 }
