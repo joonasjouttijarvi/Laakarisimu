@@ -1,5 +1,6 @@
 package simu.model;
 
+import controller.IKontrolleriMtoV;
 import eduni.distributions.Negexp;
 import eduni.distributions.Normal;
 import simu.framework.Kello;
@@ -12,8 +13,10 @@ public class OmaMoottori extends Moottori{
 	
 	private Saapumisprosessi saapumisprosessi;
 	
-	public OmaMoottori(){
-			
+	public OmaMoottori(IKontrolleriMtoV kontrolleri){
+
+		super(kontrolleri);
+
 		sairaanhoitaja = new Sairaanhoitaja(new Normal(6,7), tapahtumalista, TapahtumanTyyppi.SAIRAANHOITAJAN_PALVELU);
 		laakari= new Laakari(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
 		kassa = new Kassa(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
@@ -66,7 +69,7 @@ public class OmaMoottori extends Moottori{
 		Trace.out(Trace.Level.INFO,"Sairaanhoitaja palveli " + sairaanhoitaja.getPalvellutAsiakkaat() + " potilasta.");
 		Trace.out(Trace.Level.INFO,"Lääkärin kustannukset " + laakari.getLaakarinKustannukset() + " euroa.");
 		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
-		
+		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
 	}
 
 	

@@ -11,5 +11,4 @@ public interface ISimulaattorinUI {
 	
 	// Kontrolleri tarvitsee  
 	public IVisualisointi getVisualisointi();
-
 }

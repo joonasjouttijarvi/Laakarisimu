@@ -56,7 +56,4 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 			}
 		});
 	}
-
-
-
 }
