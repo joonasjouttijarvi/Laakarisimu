@@ -30,6 +30,7 @@ public class OmaMoottori extends Moottori{
 		saapumisprosessi.generoiSeuraava(); // Ensimmäinen saapuminen järjestelmään
 	}
 	
+	
 	@Override
 	protected void suoritaTapahtuma(Tapahtuma t){  // B-vaiheen tapahtumat
 
@@ -44,10 +45,7 @@ public class OmaMoottori extends Moottori{
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
-				if (a.tarvitseekoLaakaria()){
-					laakari.lisaaJonoon(a);
-				}
-				kassa.lisaaJonoon(a);				
+				laakari.lisaaJonoon(a);
 				break;
 			case LAAKARIN_PALVELU:
 				a = laakari.otaJonosta();

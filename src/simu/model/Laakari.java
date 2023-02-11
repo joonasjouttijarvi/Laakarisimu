@@ -19,7 +19,6 @@ public class Laakari {
     private int palkka;
     private double tyotunnit;
     private int palvellutAsiakkaat;
-
 	private boolean varattu = false;
 
 
@@ -40,12 +39,13 @@ public class Laakari {
 		return jono.poll();
 	}
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
+		double palveluaika = generator.sample();
+		jono.peek().setJonotusAika();
 		if(jono.peek() != null){
             Trace.out(Trace.Level.INFO, "Lääkärin Jonossa ei ketään");
         }
 		Trace.out(Trace.Level.INFO, "Asiakas " + jono.peek().getId()+" Lääkärin vastaanotolla");
 		varattu = true;
-		double palveluaika = generator.sample();
         tyotunnit+=palveluaika;
         palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi,Kello.getInstance().getAika()+palveluaika));
