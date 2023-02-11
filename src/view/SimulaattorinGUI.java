@@ -54,12 +54,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI{
 		// Käyttöliittymän rakentaminen
 		try {
 			
-			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-			    @Override
-			    public void handle(WindowEvent t) {
-			        Platform.exit();
-			        System.exit(0);
-			    }
+			primaryStage.setOnCloseRequest(t -> {
+				Platform.exit();
+				System.exit(0);
 			});
 						
 			

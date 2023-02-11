@@ -40,6 +40,7 @@ public class OmaMoottori extends Moottori{
 				a = new Asiakas();
 				sairaanhoitaja.lisaaJonoon(a);
 				saapumisprosessi.generoiSeuraava();
+				kontrolleri.visualisoiAsiakas();
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
