@@ -7,6 +7,7 @@ import simu.framework.Kello;
 import simu.framework.Tapahtuma;
 import simu.framework.Tapahtumalista;
 import simu.framework.Trace;
+import simu.model.Asiakas;
 
 
 public class Kassa {
@@ -21,7 +22,6 @@ public class Kassa {
 
 	
 	private boolean varattu = false;
-
 
 	public Kassa(ContinuousGenerator generator, Tapahtumalista tapahtumalista, TapahtumanTyyppi tyyppi){
 		this.tapahtumalista = tapahtumalista;
@@ -39,10 +39,14 @@ public class Kassa {
 	}
 
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
-		
+		double palveluaika = generator.sample();
+		jono.peek().setJonotusAika();
+		if(jono.peek() != null){
+			Trace.out(Trace.Level.INFO, "Kassalla ei ketään");
+		}
 		Trace.out(Trace.Level.INFO, "Asiakas" + jono.peek().getId()+" Maksaa ja lähtee");
 		varattu = true;
-		double palveluaika = generator.sample();
+
 		//TODO:
 		//laakariaseman tulot(asiakkaiden maksamat maksut)
         tulo+= palveluaika*4;
@@ -59,6 +63,6 @@ public class Kassa {
 
     public double getKassanTulo(){
         return tulo;
+	
     }
-
 }
