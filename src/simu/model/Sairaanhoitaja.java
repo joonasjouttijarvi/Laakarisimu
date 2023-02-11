@@ -20,11 +20,8 @@ public class Sairaanhoitaja {
 	private double palkka;
 	private int tyotunnit;
 	private int palvellutAsiakkaat;
-	
-	//JonoStartegia strategia; //optio: asiakkaiden järjestys
-	
-	private boolean varattu = false;
 
+	private boolean varattu = false;
 
 	public Sairaanhoitaja(ContinuousGenerator generator, Tapahtumalista tapahtumalista, TapahtumanTyyppi tyyppi){
 		this.tapahtumalista = tapahtumalista;
@@ -45,9 +42,11 @@ public class Sairaanhoitaja {
 	}
 
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
+		//set jonotusaika
+		double palveluaika = generator.sample();
+		jono.peek().setJonotusAika();
 		Trace.out(Trace.Level.INFO, "Asiakas " + jono.peek().getId()+" on sairaanhoitajan luona");
 		varattu = true;
-		double palveluaika = generator.sample();
 		tyotunnit+=palveluaika;
 		palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi,Kello.getInstance().getAika()+palveluaika));

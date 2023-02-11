@@ -12,9 +12,13 @@ public class Asiakas {
 	private static int i = 1;
 	private static long sum = 0;
 	private boolean tyytyvainen;
+	double jonotusAika;
+    
 	
 	public Asiakas(){
 	    id = i++;
+		tyytyvainen = true;
+		jonotusAika = 0;
 	    
 		saapumisaika = Kello.getInstance().getAika();
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo "+saapumisaika);
@@ -43,6 +47,10 @@ public class Asiakas {
 	public void setSaapumisaika(double saapumisaika) {
 		this.saapumisaika = saapumisaika;
 	}
+	//calculate total time spent in queue
+	public void setJonotusAika() {
+		jonotusAika =+ Kello.getInstance().getAika() - saapumisaika;
+	}
 	
 	public int getId() {
 		return id;
@@ -55,15 +63,16 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO,"Asiakas "+id+ " viipyi: " +(poistumisaika-saapumisaika));
 		sum += (poistumisaika-saapumisaika);
 		double keskiarvo = sum/id;
-		System.out.println("Asiakkaiden läpimenoaikojen keskiarvo tähän asti "+ keskiarvo);
+		Trace.out(Trace.Level.INFO,"Asiakkaiden läpimenoaikojen keskiarvo tähän asti "+ keskiarvo);
+		Trace.out(Trace.Level.INFO,"Asiakas "+id+ " oli jonossa: " +jonotusAika);
+		Trace.out(Trace.Level.INFO,"Asiakas "+id+" oli tyytyvainen:"+onTyytyvainen());
 	}
 
-	public boolean onTyytyvainen() {	//3%asiakkasta ei ole tyytyväisiä
-		if(Math.random()<0.03)
-		tyytyvainen = false;
-		else{
-			tyytyvainen = true;}
-		return tyytyvainen;
+	public boolean onTyytyvainen() {// jos asiakas on jonottanut yli 40 aikaa hän ei ole tyytyväinen
+		if(jonotusAika > 40){
+			tyytyvainen = false;
+		}
+		return tyytyvainen;	
 	}
 }
 		
