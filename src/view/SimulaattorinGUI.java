@@ -164,6 +164,4 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI{
 	public static void main(String[] args) {
 		launch(args);
 	}
-
-	
 }
