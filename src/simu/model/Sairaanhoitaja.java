@@ -42,7 +42,7 @@ public class Sairaanhoitaja {
 	}
 
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
-		//set jonotusaika
+		jono.peek().setVamma();
 		double palveluaika = generator.sample();
 		jono.peek().setJonotusAika();
 		Trace.out(Trace.Level.INFO, "Asiakas " + jono.peek().getId()+" on sairaanhoitajan luona");
@@ -50,6 +50,7 @@ public class Sairaanhoitaja {
 		tyotunnit+=palveluaika;
 		palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi,Kello.getInstance().getAika()+palveluaika));
+
 	}
 
 	public boolean onVarattu(){
