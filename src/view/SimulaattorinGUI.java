@@ -8,16 +8,12 @@ import javafx.stage.Stage;
 import javafx.scene.*;
 import javafx.scene.control.*;
 
-
-
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI{
 
 	// Käyttöliittymäkomponentit:
 	private TextField aika;
 	private TextField viive;
 	private Label tulos;
-
-	private IVisualisointi naytto;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -51,13 +47,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI{
 		 this.tulos.setText(formatter.format(aika));
 	}
 
-
-	@Override
-	public IVisualisointi getVisualisointi() {
-		 return naytto;
-	}
-	
-	
 	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
 	public static void main(String[] args) {
