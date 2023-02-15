@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="mvn">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Kontrolleri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Kontrolleri$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Kontrolleri.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Kontrolleri.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/niko" />
+                        <option value="Joonas" />
                       </list>
                     </value>
                   </entry>

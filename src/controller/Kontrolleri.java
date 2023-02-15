@@ -22,7 +22,6 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		moottori = new OmaMoottori(this);
 		moottori.setSimulointiaika(ui.getAika());
 		moottori.setViive(ui.getViive());
-		ui.getVisualisointi().tyhjennaNaytto();
 		((Thread)moottori).start();
 
 	}
@@ -39,14 +38,5 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	@Override
 	public void naytaLoppuaika(double aika) {
 		Platform.runLater(()->ui.setLoppuaika(aika)); 
-	}
-
-	@Override
-	public void visualisoiAsiakas() {
-		Platform.runLater(new Runnable(){
-			public void run(){
-				ui.getVisualisointi().uusiAsiakas();
-			}
-		});
 	}
 }
