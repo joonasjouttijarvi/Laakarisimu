@@ -39,4 +39,8 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public void naytaLoppuaika(double aika) {
 		Platform.runLater(()->ui.setLoppuaika(aika)); 
 	}
+	@Override
+	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
+		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
+	}
 }

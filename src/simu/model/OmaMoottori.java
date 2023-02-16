@@ -68,6 +68,7 @@ public class OmaMoottori extends Moottori{
 		Trace.out(Trace.Level.INFO,"Lääkärin kustannukset " + laakari.getLaakarinKustannukset() + " euroa.");
 		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
 		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
+		kontrolleri.naytaPalvellutAsiakkaat(laakari.getPalvellutAsiakkaat());
 	}
 
 	

@@ -20,7 +20,12 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private TextField aika;
 	@FXML
 	private TextField viive;
-	@FXML TextField tulos;
+
+	@FXML 
+	private Label tulos;
+	@FXML
+	private Label laakariPalvellut;
+	
 	private Kontrolleri kontrolleri;
 
 	@Override
@@ -51,9 +56,14 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@Override
 	public void setLoppuaika(double aika) {
-		DecimalFormat formatter = new DecimalFormat("#0.00");
-		this.tulos.setText(formatter.format(aika));
+		DecimalFormat df = new DecimalFormat("#.##");
+		tulos.setText(df.format(aika));
 	}
+	@Override
+	public void setPalvellutAsiakkaat(int palvellutAsiakkaat) {
+		laakariPalvellut.setText(Integer.toString(palvellutAsiakkaat));
+	}
+	
 
 	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
