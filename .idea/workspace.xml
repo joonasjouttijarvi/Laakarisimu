@@ -6,24 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="functionality to gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IKontrolleriMtoV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Kontrolleri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simu/model/OmaMoottori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ISimulaattorinUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Program.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SimulaattorinGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/IKontrolleriMtoV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/IKontrolleriMtoV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Kontrolleri.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Kontrolleri.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Tapahtumalista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/framework/Tapahtumalista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Trace$Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/framework/Trace$Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Trace.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/framework/Trace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Asiakas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/model/Asiakas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Kassa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/model/Kassa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Laakari.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/model/Laakari.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/OmaMoottori.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/model/OmaMoottori.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Sairaanhoitaja.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/simu/model/Sairaanhoitaja.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/Program.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/SimulaattorinGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SimulaattorinGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Kello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simu/framework/Kello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ISimulaattorinUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ISimulaattorinUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +21,20 @@
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="joonasjouttijarvi" />
+        <option name="repository" value="Laakarisimu" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a3b41732-734c-49aa-87d9-965d4f9afa13" />
+        <option name="url" value="https://github.com/joonasjouttijarvi/Laakarisimu.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,7 +74,7 @@
       <workItem from="1676387432806" duration="2687000" />
       <workItem from="1676413841856" duration="8000" />
       <workItem from="1676505324550" duration="23000" />
-      <workItem from="1676505568082" duration="2590000" />
+      <workItem from="1676505568082" duration="4968000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
@@ -99,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676506403076</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="functionality to gui">
+      <created>1676508248381</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676508248382</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
