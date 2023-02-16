@@ -5,9 +5,110 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="functionality to gui">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simu/framework/Kello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simu/framework/Kello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ISimulaattorinUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ISimulaattorinUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IKontrolleriVtoM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriVtoM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Bernoulli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Bernoulli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Beta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Beta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/BetaPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/BetaPrime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Binomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Binomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Cauchy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Cauchy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/ChiSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/ChiSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/ContinuousGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/ContinuousGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/DiscreteGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/DiscreteGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Distributions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Distributions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Erlang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Erlang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/FDistribution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/FDistribution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Gamma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Gamma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Geometric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Geometric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Invgamma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Invgamma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/LogNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/LogNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Logistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Logistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/MetaGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/MetaGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Negexp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Negexp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Normal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/ParameterException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/ParameterException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Pareto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Pareto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Pascal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Pascal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Poisson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Poisson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/RandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/RandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/SeedGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/SeedGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Seedable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Seedable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Tstudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Tstudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Uniform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Uniform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eduni/distributions/Weibull.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/eduni/distributions/Weibull.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/IMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Kello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Kello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Moottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Moottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Saapumisprosessi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Saapumisprosessi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Tapahtuma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Tapahtuma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Tapahtumalista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Tapahtumalista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/framework/Trace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Trace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/Asiakas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/Kassa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Kassa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/Laakari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Laakari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/Sairaanhoitaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simu/model/TapahtumanTyyppi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/TapahtumanTyyppi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/IKontrolleriMtoV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/IKontrolleriVtoM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/Kontrolleri.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Bernoulli.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Beta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/BetaPrime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Binomial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Cauchy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/ChiSquare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/ContinuousGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/DiscreteGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Distributions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Erlang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/FDistribution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Gamma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Generator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Geometric.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Invgamma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/LogNormal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Logistic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/MetaGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Negexp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Normal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/ParameterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Pareto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Pascal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Poisson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/RandomGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/SeedGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Seedable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Tstudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Uniform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eduni/distributions/Weibull.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/IMoottori.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Kello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Moottori.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Saapumisprosessi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Tapahtuma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Tapahtumalista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Trace$Level.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/framework/Trace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Asiakas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Kassa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Laakari.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/OmaMoottori.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/Sairaanhoitaja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/simu/model/TapahtumanTyyppi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ISimulaattorinUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/Program.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SimulaattorinGUI.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +118,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Joonas" />
+        <entry key="$PROJECT_DIR$" value="Main" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -44,20 +145,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -75,6 +180,7 @@
       <workItem from="1676413841856" duration="8000" />
       <workItem from="1676505324550" duration="23000" />
       <workItem from="1676505568082" duration="4968000" />
+      <workItem from="1676578549674" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
