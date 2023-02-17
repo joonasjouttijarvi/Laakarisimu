@@ -22,6 +22,7 @@ public class Asiakas {
 		jonotusAika = 0;
 		vamma = 0;
 		palveluaika=0;
+		tyytyvaisyys="";
 		saapumisaika = Kello.getInstance().getAika();
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo " + saapumisaika);
 	}
@@ -69,6 +70,13 @@ public class Asiakas {
 			Trace.out(Trace.Level.INFO, "Asiakkaan  " + id + " on VAKAVA");
 		}
 	}
+	public void setTyytyvaisyys() {
+		if (jonotusAika + palveluaika > 40) {
+			tyytyvaisyys = "ei ollut tyytyväinen";
+		} else {
+			tyytyvaisyys = "oli tyytyväinen";
+		}
+	}
 
 	public void raportti() {
 		Trace.out(Trace.Level.INFO, "\nAsiakas " + id + " valmis! ");
@@ -79,18 +87,8 @@ public class Asiakas {
 		double keskiarvo = sum / id;
 		Trace.out(Trace.Level.INFO, "Asiakkaiden läpimenoaikojen keskiarvo tähän asti " + keskiarvo);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " oli jonossa: " + jonotusAika);
-		Trace.out(Trace.Level.INFO, "Asiakas " + id + " " + onTyytyvainen());
+		Trace.out(Trace.Level.INFO, "Asiakas " + id + " " + tyytyvaisyys);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " palveluaika: " + palveluaika);
-	}
-
-	public String onTyytyvainen() {
-		if (jonotusAika + palveluaika > 40) {
-			tyytyvaisyys = "ei ollut tyytyväinen";
-		} else {
-			tyytyvaisyys = "oli tyytyväinen";
-
-		}
-		return tyytyvaisyys;
 	}
 }
 

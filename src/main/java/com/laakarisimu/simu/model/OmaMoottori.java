@@ -56,6 +56,7 @@ public class OmaMoottori extends Moottori {
 			case KASSAN_PALVELU:
 				a = kassa.otaJonosta();
 				a.setPoistumisaika(Kello.getInstance().getAika());
+				a.setTyytyvaisyys();
 				a.raportti();
 				break;
 			default:
