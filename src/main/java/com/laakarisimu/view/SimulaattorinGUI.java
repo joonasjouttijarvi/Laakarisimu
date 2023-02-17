@@ -1,6 +1,7 @@
 package com.laakarisimu.view;
 
 
+import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
 import com.laakarisimu.simu.framework.Trace;
 import javafx.application.Application;
@@ -29,7 +30,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML
 	private Label laakariPalvellut;
 	
-	private Kontrolleri kontrolleri;
+	private IKontrolleriVtoM kontrolleri;
 
 	@Override
 	public void start(Stage primaryStage) {
