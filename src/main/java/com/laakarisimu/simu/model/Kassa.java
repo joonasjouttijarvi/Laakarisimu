@@ -34,14 +34,15 @@ public class Kassa {
         jono.add(a);
 	}
 
-	public Asiakas otaJonosta(){  // Poistetaan palvelussa ollut
+	public Asiakas otaJonosta(){
 		varattu = false;
 		return jono.poll();
 	}
 
-	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
+	public void aloitaPalvelu(){
 		double palveluaika = generator.sample();
 		jono.peek().setJonotusAika();
+		jono.peek().setPalveluaika(palveluaika);
 		if(jono.peek() != null){
 			Trace.out(Trace.Level.INFO, "Kassalla ei ketään");
 		}

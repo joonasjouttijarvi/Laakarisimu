@@ -47,6 +47,7 @@ public class Sairaanhoitaja {
 		jono.peek().setVamma();
 		double palveluaika = generator.sample();
 		jono.peek().setJonotusAika();
+		jono.peek().setPalveluaika(palveluaika);
 		Trace.out(Trace.Level.INFO, "Asiakas " + jono.peek().getId()+" on sairaanhoitajan luona");
 		varattu = true;
 		tyotunnit+=palveluaika;
