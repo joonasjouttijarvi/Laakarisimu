@@ -6,6 +6,5 @@ public interface IKontrolleriMtoV {
 		
 		public void naytaLoppuaika(double aika);
 		public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat);
-		
-
+		public void naytaProgress(double progress);
 }

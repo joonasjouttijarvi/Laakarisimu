@@ -45,6 +45,11 @@ public abstract class Moottori extends Thread implements IMoottori {
 	public void setViive(long viive) {
 		this.viive = viive;
 	}
+	//progress of simulation in double between 0 and 1
+	@Override
+	public double getProgress() {
+		return kello.getAika()/simulointiaika;
+	}
 	@Override
 	public void run(){ // Entinen aja()
 		alustukset(); // luodaan mm. ensimmäinen tapahtuma

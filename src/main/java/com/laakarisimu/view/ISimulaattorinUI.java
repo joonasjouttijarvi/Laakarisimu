@@ -9,6 +9,6 @@ public interface ISimulaattorinUI {
 	
 	//Kontrolleri antaa käyttöliittymälle tuloksia, joita Moottori tuottaa 
 	public void setLoppuaika(double aika);
+	public void setProgress(double progress);
 	
-
 }

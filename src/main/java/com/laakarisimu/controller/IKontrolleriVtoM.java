@@ -8,5 +8,4 @@ public interface IKontrolleriVtoM {
 		public void nopeuta();
 		public void hidasta();
 		
-		
 }

@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="some additions to tyytyvaisyys">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriVtoM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriVtoM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Moottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Moottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" afterDir="false" />
     </list>
@@ -82,6 +89,7 @@
       <workItem from="1676578549674" duration="309000" />
       <workItem from="1676663313572" duration="2582000" />
       <workItem from="1676666258031" duration="2631000" />
+      <workItem from="1676669106640" duration="3448000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>

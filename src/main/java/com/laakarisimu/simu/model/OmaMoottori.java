@@ -58,6 +58,8 @@ public class OmaMoottori extends Moottori {
 				a.setPoistumisaika(Kello.getInstance().getAika());
 				a.setTyytyvaisyys();
 				a.raportti();
+				//progress bar is updated here
+				kontrolleri.naytaProgress(getProgress());
 				break;
 			default:
 				break;
@@ -74,6 +76,5 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
 		kontrolleri.naytaPalvellutAsiakkaat(laakari.getPalvellutAsiakkaat());
 	}
-
 	
 }

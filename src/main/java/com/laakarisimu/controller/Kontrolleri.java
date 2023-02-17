@@ -2,6 +2,7 @@ package com.laakarisimu.controller;
 
 
 import com.laakarisimu.simu.framework.IMoottori;
+import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.model.OmaMoottori;
 import com.laakarisimu.view.ISimulaattorinUI;
 import javafx.application.Platform;
@@ -43,5 +44,10 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	@Override
 	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
 		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
+	}
+	//show progress of simulation in double between 0 and 1
+	@Override
+	public void naytaProgress(double progress) {
+		ui.setProgress(progress);
 	}
 }

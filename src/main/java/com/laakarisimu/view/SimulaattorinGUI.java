@@ -3,6 +3,7 @@ package com.laakarisimu.view;
 
 import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
+import com.laakarisimu.simu.framework.Moottori;
 import com.laakarisimu.simu.framework.Trace;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -29,6 +31,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private Label tulos;
 	@FXML
 	private Label laakariPalvellut;
+	@FXML
+	private ProgressBar progressBar;
 	
 	private IKontrolleriVtoM kontrolleri;
 
@@ -94,6 +98,12 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML
 	private void nopeuta() {
 		kontrolleri.nopeuta();
+	}
+
+	@Override
+	public void setProgress(double progress) {
+		progressBar.setProgress(progress);
+		
 	}
 }
 	
