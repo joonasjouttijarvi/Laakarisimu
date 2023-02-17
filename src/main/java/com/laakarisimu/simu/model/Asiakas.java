@@ -14,13 +14,14 @@ public class Asiakas {
 	private double jonotusAika;
 	private double vamma;
 	private String tyytyvaisyys;
+	private double palveluaika;
 
 
 	public Asiakas() {
 		id = i++;
 		jonotusAika = 0;
 		vamma = 0;
-
+		palveluaika=0;
 		saapumisaika = Kello.getInstance().getAika();
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo " + saapumisaika);
 	}
@@ -40,19 +41,26 @@ public class Asiakas {
 	public void setSaapumisaika(double saapumisaika) {
 		this.saapumisaika = saapumisaika;
 	}
+	public double getVamma() {
+		return vamma;
+	}
 
 	//calculate total time spent in queue
 	public void setJonotusAika() {
 		jonotusAika = +Kello.getInstance().getAika() - saapumisaika;
 	}
-
+	// calculate individual asiakas service time - time in queue
+	public void setPalveluaika(double palveluaika) {
+		this.palveluaika=+ palveluaika;
+	}
+	
 	public int getId() {
 		return id;
 	}
 
 	public void setVamma() {
 		Negexp negexp = new Negexp(0.2);
-		double vamma = negexp.sample();
+		vamma = negexp.sample();
 		if (vamma < 0.5) {
 			Trace.out(Trace.Level.INFO, "Asiakas " + id + " on LIEVÄ");
 		} else if (vamma < 0.8) {
@@ -72,10 +80,11 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "Asiakkaiden läpimenoaikojen keskiarvo tähän asti " + keskiarvo);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " oli jonossa: " + jonotusAika);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " " + onTyytyvainen());
+		Trace.out(Trace.Level.INFO, "Asiakas " + id + " palveluaika: " + palveluaika);
 	}
 
 	public String onTyytyvainen() {
-		if (jonotusAika > 40) {
+		if (jonotusAika + palveluaika > 40) {
 			tyytyvaisyys = "ei ollut tyytyväinen";
 		} else {
 			tyytyvaisyys = "oli tyytyväinen";
