@@ -42,6 +42,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../Program.fxml"));
 			Scene scene = new Scene(root);
+			primaryStage.setTitle("Lääkäriasema");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
