@@ -2,7 +2,6 @@ package com.laakarisimu.controller;
 
 
 import com.laakarisimu.simu.framework.IMoottori;
-import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.model.OmaMoottori;
 import com.laakarisimu.view.ISimulaattorinUI;
 import javafx.application.Platform;
@@ -10,6 +9,7 @@ import javafx.application.Platform;
 public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUSI
 	
 	private IMoottori moottori;
+
 	private ISimulaattorinUI ui;
 	
 	public Kontrolleri(ISimulaattorinUI ui) {
@@ -33,6 +33,10 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	}
 
 	@Override
+	public double setNopeus() {
+		return ui.getNopeus();
+	}
+	@Override
 	public void nopeuta() { // nopeutetaan moottorisäiettä
 		moottori.setViive((long)(moottori.getViive()*0.9));
 	}
@@ -45,9 +49,10 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
 		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
 	}
-	//show progress of simulation in double between 0 and 1
+
 	@Override
 	public void naytaProgress(double progress) {
 		ui.setProgress(progress);
 	}
+
 }

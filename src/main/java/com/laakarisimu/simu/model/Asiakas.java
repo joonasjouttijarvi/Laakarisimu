@@ -13,7 +13,7 @@ public class Asiakas {
 	private static long sum = 0;
 	private double jonotusAika;
 	private double vamma;
-	private String tyytyvaisyys;
+	private int tyytyvaisyys;
 	private double palveluaika;
 
 
@@ -22,7 +22,7 @@ public class Asiakas {
 		jonotusAika = 0;
 		vamma = 0;
 		palveluaika=0;
-		tyytyvaisyys="";
+		tyytyvaisyys=0;
 		saapumisaika = Kello.getInstance().getAika();
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo " + saapumisaika);
 	}
@@ -59,10 +59,12 @@ public class Asiakas {
 		return id;
 	}
 
+
+	//
 	public void setVamma() {
 		Negexp negexp = new Negexp(0.2);
 		vamma = negexp.sample();
-		if (vamma < 0.5) {
+		if (vamma < 0.2) {
 			Trace.out(Trace.Level.INFO, "Asiakas " + id + " on LIEVÄ");
 		} else if (vamma < 0.8) {
 			Trace.out(Trace.Level.INFO, "Asiakas " + id + " on KOHTALAINEN");
@@ -72,9 +74,9 @@ public class Asiakas {
 	}
 	public void setTyytyvaisyys() {
 		if (jonotusAika + palveluaika > 40) {
-			tyytyvaisyys = "ei ollut tyytyväinen";
+			tyytyvaisyys ++;
 		} else {
-			tyytyvaisyys = "oli tyytyväinen";
+			tyytyvaisyys --;
 		}
 	}
 

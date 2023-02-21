@@ -8,4 +8,6 @@ public interface IMoottori { // UUSI
 	public void setViive(long aika);
 	public long getViive();
 	public double getProgress();
+	public double getNopeus();
+
 }

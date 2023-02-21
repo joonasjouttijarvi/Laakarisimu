@@ -10,7 +10,8 @@ import com.laakarisimu.simu.framework.*;
 public class OmaMoottori extends Moottori {
 	
 	private Saapumisprosessi saapumisprosessi;
-	
+
+
 	public OmaMoottori(IKontrolleriMtoV kontrolleri){
 
 		super(kontrolleri);
@@ -19,7 +20,7 @@ public class OmaMoottori extends Moottori {
 		laakari= new Laakari(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
 		kassa = new Kassa(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
 		
-		saapumisprosessi = new Saapumisprosessi(new Negexp(15,5), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
+		saapumisprosessi = new Saapumisprosessi(new Negexp(getNopeus(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
 
@@ -58,7 +59,6 @@ public class OmaMoottori extends Moottori {
 				a.setPoistumisaika(Kello.getInstance().getAika());
 				a.setTyytyvaisyys();
 				a.raportti();
-				//progress bar is updated here
 				kontrolleri.naytaProgress(getProgress());
 				break;
 			default:
@@ -74,7 +74,10 @@ public class OmaMoottori extends Moottori {
 		Trace.out(Trace.Level.INFO,"Lääkärin kustannukset " + laakari.getLaakarinKustannukset() + " euroa.");
 		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
 		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
-		kontrolleri.naytaPalvellutAsiakkaat(laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalvellutAsiakkaat(sairaanhoitaja.getPalvellutAsiakkaat());
 	}
-	
+	@Override
+	public double getNopeus() {
+		return kontrolleri.setNopeus();
+	}
 }

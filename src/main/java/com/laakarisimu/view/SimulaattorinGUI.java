@@ -3,7 +3,6 @@ package com.laakarisimu.view;
 
 import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
-import com.laakarisimu.simu.framework.Moottori;
 import com.laakarisimu.simu.framework.Trace;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -21,7 +20,9 @@ import java.text.DecimalFormat;
 
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
-	// Käyttöliittymäkomponentit:
+	@FXML
+    private TextField nopeus;
+    // Käyttöliittymäkomponentit:
 	@FXML
 	private TextField aika;
 	@FXML
@@ -99,6 +100,10 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML
 	private void nopeuta() {
 		kontrolleri.nopeuta();
+	}
+	@FXML
+	public double getNopeus(){
+		return Double.parseDouble(nopeus.getText());
 	}
 
 	@Override
