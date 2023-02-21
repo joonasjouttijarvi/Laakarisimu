@@ -43,7 +43,8 @@ public class OmaMoottori extends Moottori {
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
-				if(a.getVamma()> 0.2){
+				if(a.getHoidontarve() == Asiakas.hoidontarve.KOHTALAINEN 
+				|| a.getHoidontarve() == Asiakas.hoidontarve.VAKAVA){
 					laakari.lisaaJonoon(a);
 				}
 				else{
@@ -57,7 +58,6 @@ public class OmaMoottori extends Moottori {
 			case KASSAN_PALVELU:
 				a = kassa.otaJonosta();
 				a.setPoistumisaika(Kello.getInstance().getAika());
-				a.setTyytyvaisyys();
 				a.raportti();
 				kontrolleri.naytaProgress(getProgress());
 				break;
