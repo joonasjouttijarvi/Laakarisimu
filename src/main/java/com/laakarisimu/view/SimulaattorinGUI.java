@@ -21,8 +21,8 @@ import java.text.DecimalFormat;
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
-    private TextField nopeus;
-    // Käyttöliittymäkomponentit:
+    private TextField asiakkaanSaapumisTiheys;
+
 	@FXML
 	private TextField aika;
 	@FXML
@@ -102,8 +102,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		kontrolleri.nopeuta();
 	}
 	@FXML
-	public double getNopeus(){
-		return Double.parseDouble(nopeus.getText());
+	public double getAsiakkaanSaapumistiheys(){
+		return Double.parseDouble(asiakkaanSaapumisTiheys.getText());
 	}
 
 	@Override

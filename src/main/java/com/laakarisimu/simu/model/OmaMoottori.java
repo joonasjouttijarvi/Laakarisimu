@@ -20,7 +20,7 @@ public class OmaMoottori extends Moottori {
 		laakari= new Laakari(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
 		kassa = new Kassa(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
 		
-		saapumisprosessi = new Saapumisprosessi(new Negexp(getNopeus(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
+		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
 
@@ -77,7 +77,7 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaPalvellutAsiakkaat(sairaanhoitaja.getPalvellutAsiakkaat());
 	}
 	@Override
-	public double getNopeus() {
-		return kontrolleri.setNopeus();
+	public double getAsiakkaanSaapumisTiheys() {
+		return kontrolleri.getAsiakkaanSaapumisTiheys();
 	}
 }

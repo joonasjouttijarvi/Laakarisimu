@@ -33,8 +33,8 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	}
 
 	@Override
-	public double setNopeus() {
-		return ui.getNopeus();
+	public double getAsiakkaanSaapumisTiheys() {
+		return ui.getAsiakkaanSaapumistiheys();
 	}
 	@Override
 	public void nopeuta() { // nopeutetaan moottorisäiettä

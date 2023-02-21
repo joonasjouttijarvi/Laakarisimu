@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="some additions to tyytyvaisyys">
+    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="func">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriVtoM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriVtoM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Saapumisprosessi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/Saapumisprosessi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
@@ -134,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676667632835</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="func">
+      <created>1676978626209</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676978626209</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +173,7 @@
     <MESSAGE value="functionality to gui" />
     <MESSAGE value="added functionality to Asiakas OmaMoottori." />
     <MESSAGE value="some additions to tyytyvaisyys" />
-    <option name="LAST_COMMIT_MESSAGE" value="some additions to tyytyvaisyys" />
+    <MESSAGE value="func" />
+    <option name="LAST_COMMIT_MESSAGE" value="func" />
   </component>
 </project>

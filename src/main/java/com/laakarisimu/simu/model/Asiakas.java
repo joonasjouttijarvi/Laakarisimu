@@ -74,9 +74,9 @@ public class Asiakas {
 	}
 	public void setTyytyvaisyys() {
 		if (jonotusAika + palveluaika > 40) {
-			tyytyvaisyys ++;
-		} else {
 			tyytyvaisyys --;
+		} else {
+			tyytyvaisyys ++;
 		}
 	}
 
