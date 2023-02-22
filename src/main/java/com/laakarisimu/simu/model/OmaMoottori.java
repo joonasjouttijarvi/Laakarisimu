@@ -1,5 +1,5 @@
 package com.laakarisimu.simu.model;
-
+import java.text.DecimalFormat;
 
 import com.laakarisimu.controller.IKontrolleriMtoV;
 import com.laakarisimu.eduni.distributions.Negexp;
@@ -23,6 +23,7 @@ public class OmaMoottori extends Moottori {
 		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
+	
 
 	@Override
 	protected void alustukset() {
@@ -78,10 +79,14 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaLaakarinPalvelemat(laakari.getPalvellutAsiakkaat());
 		kontrolleri.naytaLaakarinPalkka(laakari.getLaakarinKustannukset());
 		kontrolleri.naytaSairaanhoitajanPalkka(sairaanhoitaja.getSairaanhoitajanKustannukset());
-		kontrolleri.naytaHoidontarveLieva(asiakas.getHoidontarveLieva());
-		kontrolleri.naytaHoidontarveKohtalainen(asiakas.getHoidontarveKohtalainen());
-		kontrolleri.naytaHoidontarveVakava(asiakas.getHoidontarveVakava());
-	}
+		double lievat=(Asiakas.lieva)*100;
+		double kohtalaiset=(Asiakas.kohtalainen)*100;
+		double vakavat=(Asiakas.vakava)*100;
+		kontrolleri.naytaHoidontarveLieva((lievat));
+		kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
+		kontrolleri.naytaHoidontarveVakava((vakavat));
+		}
+
 	@Override
 	public double getAsiakkaanSaapumisTiheys() {
 		return kontrolleri.getAsiakkaanSaapumisTiheys();

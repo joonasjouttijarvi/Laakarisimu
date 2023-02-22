@@ -40,7 +40,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML 
 	private Label tulos;
 	@FXML
-	private Label laakariPalvellut; // tämä nimi pitää vaihtaa kaikkiPalvellut tms.
+	private Label kaikkiPalvellut;
 	@FXML
 	private Label laakarinPalvelemat;
 	@FXML
@@ -93,7 +93,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	}
 	@Override
 	public void setPalvellutAsiakkaat(int palvellutAsiakkaat) {
-		laakariPalvellut.setText(Integer.toString(palvellutAsiakkaat));
+		kaikkiPalvellut.setText(Integer.toString(palvellutAsiakkaat));
 	}
 	@Override
 	public void setLaakarinPalvelemat(int laakarinPalvelematAs){
@@ -108,16 +108,16 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		sairaanhoitajanPalkka.setText(Double.toString(palkka));
 	}
 	@Override
-	public void setHoidontarveLieva(int lieva){
-		hoidontarveLieva.setText(Integer.toString(lieva));
+	public void setHoidontarveLieva(double lieva){
+		hoidontarveLieva.setText(Double.toString(lieva));
 	}
 	@Override
-	public void setHoidontarveKohtalainen(int kohtalainen){
-		hoidontarveKohtalainen.setText(Integer.toString(kohtalainen));
+	public void setHoidontarveKohtalainen(double kohtalainen){
+		hoidontarveKohtalainen.setText(Double.toString(kohtalainen));
 	}
 	@Override
-	public void setHoidontarveVakava(int vakava){
-		hoidontarveVakava.setText(Integer.toString(vakava));
+	public void setHoidontarveVakava(double vakava){
+		hoidontarveVakava.setText(Double.toString(vakava));
 	}
 
 
