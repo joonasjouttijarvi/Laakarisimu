@@ -1,4 +1,6 @@
 package com.laakarisimu.simu.model;
+import java.text.DecimalFormat;
+
 import com.laakarisimu.controller.IKontrolleriMtoV;
 import com.laakarisimu.eduni.distributions.Negexp;
 import com.laakarisimu.eduni.distributions.Normal;
@@ -77,12 +79,12 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaLaakarinPalvelemat(laakari.getPalvellutAsiakkaat());
 		kontrolleri.naytaLaakarinPalkka(laakari.getLaakarinKustannukset());
 		kontrolleri.naytaSairaanhoitajanPalkka(sairaanhoitaja.getSairaanhoitajanKustannukset());
-		double lievat= ((float) Asiakas.lieva / Asiakas.i) * 100;
-		double kohtalaiset=((float)Asiakas.kohtalainen/Asiakas.i)*100;
-		double vakavat=((float)Asiakas.vakava/Asiakas.i)*100;
-		kontrolleri.naytaHoidontarveLieva(Math.round(lievat));
-		kontrolleri.naytaHoidontarveKohtalainen(Math.round(kohtalaiset));
-		kontrolleri.naytaHoidontarveVakava(Math.round(vakavat));
+		double lievat=(Asiakas.lieva)*100;
+		double kohtalaiset=(Asiakas.kohtalainen)*100;
+		double vakavat=(Asiakas.vakava)*100;
+		kontrolleri.naytaHoidontarveLieva((lievat));
+		kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
+		kontrolleri.naytaHoidontarveVakava((vakavat));
 		}
 
 	@Override

@@ -4,6 +4,7 @@ package com.laakarisimu.controller;
 
 
 import com.laakarisimu.simu.framework.IMoottori;
+import com.laakarisimu.simu.model.Asiakas;
 import com.laakarisimu.simu.model.OmaMoottori;
 import com.laakarisimu.view.ISimulaattorinUI;
 import javafx.application.Platform;
@@ -82,16 +83,16 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	@Override
 	public void naytaHoidontarveLieva(double lieva){
 		Platform.runLater(() -> {
-			ui.setHoidontarveLieva(lieva);
+			ui.setHoidontarveLieva(lieva/Asiakas.i);
 		});
 	}
 	@Override
 	public void naytaHoidontarveKohtalainen(double kohtalainen){
-		Platform.runLater(() -> ui.setHoidontarveKohtalainen(kohtalainen));
+		Platform.runLater(() -> ui.setHoidontarveKohtalainen(kohtalainen/Asiakas.i));
 	}
 	@Override
 	public void naytaHoidontarveVakava(double vakava){
-		Platform.runLater(() -> ui.setHoidontarveVakava(vakava));
+		Platform.runLater(() -> ui.setHoidontarveVakava(vakava/Asiakas.i));
 	}
 
 
