@@ -1,7 +1,7 @@
 package com.laakarisimu.controller;
 
 
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
+
 
 import com.laakarisimu.simu.framework.IMoottori;
 import com.laakarisimu.simu.model.OmaMoottori;
@@ -80,15 +80,17 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		Platform.runLater(() -> ui.setSairaanhoitajanPalkka(palkka));
 	}
 	@Override
-	public void naytaHoidontarveLieva(int lieva){
-		Platform.runLater(() -> ui.setHoidontarveLieva(lieva));
+	public void naytaHoidontarveLieva(double lieva){
+		Platform.runLater(() -> {
+			ui.setHoidontarveLieva(lieva);
+		});
 	}
 	@Override
-	public void naytaHoidontarveKohtalainen(int kohtalainen){
+	public void naytaHoidontarveKohtalainen(double kohtalainen){
 		Platform.runLater(() -> ui.setHoidontarveKohtalainen(kohtalainen));
 	}
 	@Override
-	public void naytaHoidontarveVakava(int vakava){
+	public void naytaHoidontarveVakava(double vakava){
 		Platform.runLater(() -> ui.setHoidontarveVakava(vakava));
 	}
 
@@ -97,5 +99,4 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public void naytaProgress(double progress) {
 		ui.setProgress(progress);
 	}
-
-}
+	}

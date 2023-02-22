@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="func">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -145,7 +151,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Joonas" />
+                        <option value="origin/Main" />
                       </list>
                     </value>
                   </entry>

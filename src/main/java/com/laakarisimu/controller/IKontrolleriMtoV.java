@@ -10,9 +10,9 @@ public interface IKontrolleriMtoV {
 		public void naytaLaakarinPalkka(double palkka);
 		public void naytaSairaanhoitajanPalkka(double palkka);
 		public void naytaProgress(double progress);
-		public void naytaHoidontarveLieva(int lieva);
-		public void naytaHoidontarveKohtalainen(int kohtalainen);
-		public void naytaHoidontarveVakava(int vakava);
+		public void naytaHoidontarveLieva(double lieva);
+		public void naytaHoidontarveKohtalainen(double kohtalainen);
+		public void naytaHoidontarveVakava(double vakava);
 		public double getAsiakkaanSaapumisTiheys();
 		public double getSairaanhoitajanPalveluaika();
 		public double getLaakarinPalveluaika();
