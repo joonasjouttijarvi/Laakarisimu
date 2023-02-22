@@ -21,8 +21,17 @@ import java.text.DecimalFormat;
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
-    private TextField nopeus;
-    // Käyttöliittymäkomponentit:
+    private TextField asiakkaanSaapumisTiheys;
+
+	@FXML
+	private TextField sairaanhoitajanPalveluaika;
+
+	@FXML
+	private TextField laakarinPalveluaika;
+
+	@FXML
+	private TextField kassanPalveluaika;
+
 	@FXML
 	private TextField aika;
 	@FXML
@@ -31,7 +40,20 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML 
 	private Label tulos;
 	@FXML
-	private Label laakariPalvellut;
+	private Label laakariPalvellut; // tämä nimi pitää vaihtaa kaikkiPalvellut tms.
+	@FXML
+	private Label laakarinPalvelemat;
+	@FXML
+	private Label laakarinPalkka;
+	@FXML
+	private Label sairaanhoitajanPalkka;
+	@FXML
+	private Label hoidontarveLieva;
+	@FXML
+	private Label hoidontarveKohtalainen;
+	@FXML
+	private Label hoidontarveVakava;
+
 	@FXML
 	private ProgressBar progressBar;
 	
@@ -73,7 +95,35 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	public void setPalvellutAsiakkaat(int palvellutAsiakkaat) {
 		laakariPalvellut.setText(Integer.toString(palvellutAsiakkaat));
 	}
-	
+	@Override
+	public void setLaakarinPalvelemat(int laakarinPalvelematAs){
+		laakarinPalvelemat.setText(Integer.toString(laakarinPalvelematAs));
+	}
+	@Override
+	public void setLaakarinPalkka(double palkka){
+		laakarinPalkka.setText(Double.toString(palkka));
+	}
+	@Override
+	public void setSairaanhoitajanPalkka(double palkka){
+		sairaanhoitajanPalkka.setText(Double.toString(palkka));
+	}
+	@Override
+	public void setHoidontarveLieva(int lieva){
+		hoidontarveLieva.setText(Integer.toString(lieva));
+	}
+	@Override
+	public void setHoidontarveKohtalainen(int kohtalainen){
+		hoidontarveKohtalainen.setText(Integer.toString(kohtalainen));
+	}
+	@Override
+	public void setHoidontarveVakava(int vakava){
+		hoidontarveVakava.setText(Integer.toString(vakava));
+	}
+
+
+
+
+
 
 	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
@@ -102,8 +152,23 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		kontrolleri.nopeuta();
 	}
 	@FXML
-	public double getNopeus(){
-		return Double.parseDouble(nopeus.getText());
+	public double getAsiakkaanSaapumistiheys(){
+		return Double.parseDouble(asiakkaanSaapumisTiheys.getText());
+	}
+
+	@FXML
+	public double getSairaanhoitajanPalveluaika(){
+		return Double.parseDouble(sairaanhoitajanPalveluaika.getText());
+	}
+
+	@FXML
+	public double getLaakarinPalveluaika(){
+		return Double.parseDouble(laakarinPalveluaika.getText());
+	}
+
+	@FXML
+	public double getKassanPalveluaika(){
+		return Double.parseDouble(kassanPalveluaika.getText());
 	}
 
 	@Override

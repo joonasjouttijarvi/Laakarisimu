@@ -8,6 +8,8 @@ public interface IMoottori { // UUSI
 	public void setViive(long aika);
 	public long getViive();
 	public double getProgress();
-	public double getNopeus();
-
+	public double getAsiakkaanSaapumisTiheys();
+	public double getSairaanhoitajanPalveluaika();
+	public double getLaakarinPalveluaika();
+	public double getKassanPalveluaika();
 }
