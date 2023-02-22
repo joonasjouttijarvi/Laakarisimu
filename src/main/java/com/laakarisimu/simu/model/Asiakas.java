@@ -6,21 +6,28 @@ import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.framework.Trace;
 
 public class Asiakas {
+	enum hoidontarve {
+		LIEVA, KOHTALAINEN, VAKAVA
+	}
 	private double saapumisaika;
 	private double poistumisaika;
-	private int id;
+	private final int id;
 	private static int i = 1;
 	private static long sum = 0;
 	private double jonotusAika;
-	private double vamma;
-	private int tyytyvaisyys;
+
+	private static int tyytyvaisyys;
 	private double palveluaika;
+	private static hoidontarve hoidontarve;
+	private static int lieva=0;
+	private static int kohtalainen=0;
+	private static int vakava=0;
 
 
 	public Asiakas() {
 		id = i++;
 		jonotusAika = 0;
-		vamma = 0;
+		hoidontarve = null;
 		palveluaika=0;
 		tyytyvaisyys=0;
 		saapumisaika = Kello.getInstance().getAika();
@@ -42,11 +49,9 @@ public class Asiakas {
 	public void setSaapumisaika(double saapumisaika) {
 		this.saapumisaika = saapumisaika;
 	}
-	public double getVamma() {
-		return vamma;
-	}
+	
 
-	//calculate total time spent in queue
+
 	public void setJonotusAika() {
 		jonotusAika = +Kello.getInstance().getAika() - saapumisaika;
 	}
@@ -59,25 +64,24 @@ public class Asiakas {
 		return id;
 	}
 
-
-	//
-	public void setVamma() {
-		Negexp negexp = new Negexp(0.2);
-		vamma = negexp.sample();
-		if (vamma < 0.2) {
-			Trace.out(Trace.Level.INFO, "Asiakas " + id + " on LIEVÄ");
-		} else if (vamma < 0.8) {
-			Trace.out(Trace.Level.INFO, "Asiakas " + id + " on KOHTALAINEN");
+	public void setHoidontarve() {
+		Negexp negexp = new Negexp(1);
+		double h = negexp.sample();
+		if (h <= 0.5) {
+			hoidontarve = Asiakas.hoidontarve.LIEVA;
+			lieva++;
+		} else if (h < 0.8) {
+			hoidontarve = Asiakas.hoidontarve.KOHTALAINEN;
+			kohtalainen++;
 		} else {
-			Trace.out(Trace.Level.INFO, "Asiakkaan  " + id + " on VAKAVA");
+			hoidontarve = Asiakas.hoidontarve.VAKAVA;
+			vakava++;
 		}
+		
 	}
-	public void setTyytyvaisyys() {
-		if (jonotusAika + palveluaika > 40) {
-			tyytyvaisyys --;
-		} else {
-			tyytyvaisyys ++;
-		}
+	//getter for hoidontarve
+	public hoidontarve getHoidontarve() {
+		return hoidontarve;
 	}
 
 	public void raportti() {
@@ -91,6 +95,8 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " oli jonossa: " + jonotusAika);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " " + tyytyvaisyys);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " palveluaika: " + palveluaika);
+		Trace.out(Trace.Level.INFO, "Asiakas " + id + " hoidontarve: " + hoidontarve);
+		
 	}
 }
 

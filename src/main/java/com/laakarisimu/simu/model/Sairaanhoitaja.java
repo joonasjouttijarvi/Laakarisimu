@@ -44,7 +44,7 @@ public class Sairaanhoitaja {
 	}
 
 	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
-		jono.peek().setVamma();
+		jono.peek().setHoidontarve();
 		double palveluaika = generator.sample();
 		jono.peek().setJonotusAika();
 		jono.peek().setPalveluaika(palveluaika);
