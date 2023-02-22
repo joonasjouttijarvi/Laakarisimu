@@ -2,6 +2,7 @@ package com.laakarisimu.simu.framework;
 
 
 import com.laakarisimu.controller.IKontrolleriMtoV;
+import com.laakarisimu.simu.model.Asiakas;
 import com.laakarisimu.simu.model.Kassa;
 import com.laakarisimu.simu.model.Laakari;
 import com.laakarisimu.simu.model.Sairaanhoitaja;
@@ -16,6 +17,7 @@ public abstract class Moottori extends Thread implements IMoottori {
 	protected Sairaanhoitaja sairaanhoitaja;
 	protected Laakari laakari;
 	protected Kassa kassa;
+	protected Asiakas asiakas;
 	protected IKontrolleriMtoV kontrolleri;
 	
 

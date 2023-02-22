@@ -1,6 +1,8 @@
 package com.laakarisimu.controller;
 
 
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
+
 import com.laakarisimu.simu.framework.IMoottori;
 import com.laakarisimu.simu.model.OmaMoottori;
 import com.laakarisimu.view.ISimulaattorinUI;
@@ -36,6 +38,22 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public double getAsiakkaanSaapumisTiheys() {
 		return ui.getAsiakkaanSaapumistiheys();
 	}
+
+	@Override
+	public double getSairaanhoitajanPalveluaika(){
+		return ui.getSairaanhoitajanPalveluaika();
+	}
+
+	@Override 
+	public double getLaakarinPalveluaika(){
+		return ui.getLaakarinPalveluaika();
+	}
+
+	@Override
+	public double getKassanPalveluaika(){
+		return ui.getKassanPalveluaika();
+	}
+
 	@Override
 	public void nopeuta() { // nopeutetaan moottorisäiettä
 		moottori.setViive((long)(moottori.getViive()*0.9));
@@ -49,6 +67,31 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
 		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
 	}
+	@Override
+	public void naytaLaakarinPalvelemat(int laakarinPalvelematAs){
+		Platform.runLater(() -> ui.setLaakarinPalvelemat(laakarinPalvelematAs));
+	}
+	@Override
+	public void naytaLaakarinPalkka(double palkka){
+		Platform.runLater(() -> ui.setLaakarinPalkka(palkka));
+	}
+	@Override
+	public void naytaSairaanhoitajanPalkka(double palkka){
+		Platform.runLater(() -> ui.setSairaanhoitajanPalkka(palkka));
+	}
+	@Override
+	public void naytaHoidontarveLieva(int lieva){
+		Platform.runLater(() -> ui.setHoidontarveLieva(lieva));
+	}
+	@Override
+	public void naytaHoidontarveKohtalainen(int kohtalainen){
+		Platform.runLater(() -> ui.setHoidontarveKohtalainen(kohtalainen));
+	}
+	@Override
+	public void naytaHoidontarveVakava(int vakava){
+		Platform.runLater(() -> ui.setHoidontarveVakava(vakava));
+	}
+
 
 	@Override
 	public void naytaProgress(double progress) {

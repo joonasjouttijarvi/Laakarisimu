@@ -16,9 +16,9 @@ public class OmaMoottori extends Moottori {
 
 		super(kontrolleri);
 
-		sairaanhoitaja = new Sairaanhoitaja(new Normal(6,7), tapahtumalista, TapahtumanTyyppi.SAIRAANHOITAJAN_PALVELU);
-		laakari= new Laakari(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
-		kassa = new Kassa(new Normal(10,6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
+		sairaanhoitaja = new Sairaanhoitaja(new Normal(getSairaanhoitajanPalveluaika(),7), tapahtumalista, TapahtumanTyyppi.SAIRAANHOITAJAN_PALVELU);
+		laakari= new Laakari(new Normal(getLaakarinPalveluaika(),6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
+		kassa = new Kassa(new Normal(getKassanPalveluaika(),6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
 		
 		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
@@ -75,9 +75,31 @@ public class OmaMoottori extends Moottori {
 		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
 		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
 		kontrolleri.naytaPalvellutAsiakkaat(sairaanhoitaja.getPalvellutAsiakkaat());
+		kontrolleri.naytaLaakarinPalvelemat(laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaLaakarinPalkka(laakari.getLaakarinKustannukset());
+		kontrolleri.naytaSairaanhoitajanPalkka(sairaanhoitaja.getSairaanhoitajanKustannukset());
+		kontrolleri.naytaHoidontarveLieva(asiakas.getHoidontarveLieva());
+		kontrolleri.naytaHoidontarveKohtalainen(asiakas.getHoidontarveKohtalainen());
+		kontrolleri.naytaHoidontarveVakava(asiakas.getHoidontarveVakava());
 	}
 	@Override
 	public double getAsiakkaanSaapumisTiheys() {
 		return kontrolleri.getAsiakkaanSaapumisTiheys();
 	}
+
+	@Override
+	public double getSairaanhoitajanPalveluaika(){
+		return kontrolleri.getSairaanhoitajanPalveluaika();
+	}
+
+	@Override
+	public double getLaakarinPalveluaika(){
+		return kontrolleri.getLaakarinPalveluaika();
+	}
+
+	@Override
+	public double getKassanPalveluaika(){
+		return kontrolleri.getKassanPalveluaika();
+	}
+
 }

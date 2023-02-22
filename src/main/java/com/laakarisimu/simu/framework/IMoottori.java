@@ -9,5 +9,7 @@ public interface IMoottori { // UUSI
 	public long getViive();
 	public double getProgress();
 	public double getAsiakkaanSaapumisTiheys();
-
+	public double getSairaanhoitajanPalveluaika();
+	public double getLaakarinPalveluaika();
+	public double getKassanPalveluaika();
 }

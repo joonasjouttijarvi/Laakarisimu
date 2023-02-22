@@ -84,6 +84,18 @@ public class Asiakas {
 		return hoidontarve;
 	}
 
+	public int getHoidontarveLieva(){
+		return lieva;
+	}
+
+	public int getHoidontarveKohtalainen(){
+		return kohtalainen;
+	}
+
+	public int getHoidontarveVakava(){
+		return vakava;
+	}
+
 	public void raportti() {
 		Trace.out(Trace.Level.INFO, "\nAsiakas " + id + " valmis! ");
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " saapui: " + saapumisaika);
