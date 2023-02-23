@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
@@ -101,7 +103,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	}
 	@Override
 	public void setLaakarinPalkka(double palkka){
-		laakarinPalkka.setText(Double.toString(palkka));
+		DecimalFormat df = new DecimalFormat("#.##");
+		laakarinPalkka.setText(df.format(palkka));
 	}
 	@Override
 	public void setSairaanhoitajanPalkka(double palkka){
@@ -119,11 +122,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	public void setHoidontarveVakava(double vakava){
 		hoidontarveVakava.setText(Double.toString(vakava));
 	}
-
-
-
-
-
 
 	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
@@ -176,5 +174,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		progressBar.setProgress(progress);
 		
 	}
+
 }
 	
