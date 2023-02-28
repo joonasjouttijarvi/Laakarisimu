@@ -12,6 +12,8 @@ public class PotilasDao {
     EntityTransaction tx = em.getTransaction();
 
     public void lisaaPotilas(Asiakas a) {
+        EntityManager em = MariaDbConn.getEntityManager();
+        EntityTransaction tx = em.getTransaction();
         tx.begin();
         Potilaat p = new Potilaat();
         p.setHoidontarve(a.getHoidontarve().toString());
