@@ -9,7 +9,7 @@ import com.laakarisimu.simu.framework.Trace;
 public class Asiakas {
 
 
-	enum hoidontarve {
+	public enum hoidontarve {
 		LIEVA, KOHTALAINEN, VAKAVA
 	}
 	private double saapumisaika;
