@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Laakariasemasimulaattori" />
+        <module name="Laakarisimu 22.05.17" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
