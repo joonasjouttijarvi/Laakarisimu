@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="Database fix for hoidontarve">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasource/MariaDbConn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasource/MariaDbConn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Joonas" />
+        <entry key="$PROJECT_DIR$" value="Main" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -214,7 +210,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Main" />
+                        <option value="Joonas" />
                       </list>
                     </value>
                   </entry>
@@ -233,6 +229,7 @@
     <MESSAGE value="some additions to tyytyvaisyys" />
     <MESSAGE value="Hoidontarve % working" />
     <MESSAGE value="Database fix for hoidontarve" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database fix for hoidontarve" />
+    <MESSAGE value="code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanup" />
   </component>
 </project>
