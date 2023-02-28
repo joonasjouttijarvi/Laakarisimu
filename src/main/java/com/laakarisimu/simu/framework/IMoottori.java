@@ -1,6 +1,6 @@
 package com.laakarisimu.simu.framework;
 
-public interface IMoottori { // UUSI
+public interface IMoottori {
 		
 	// Kontrolleri käyttää tätä rajapintaa
 	
