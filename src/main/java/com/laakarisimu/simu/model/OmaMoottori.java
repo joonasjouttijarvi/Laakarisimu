@@ -44,7 +44,7 @@ public class OmaMoottori extends Moottori {
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
-				if(a.getHoidontarve() == Asiakas.hoidontarve.KOHTALAINEN 
+				if(a.getHoidontarve() == Asiakas.hoidontarve.KOHTALAINEN
 				|| a.getHoidontarve() == Asiakas.hoidontarve.VAKAVA){
 					laakari.lisaaJonoon(a);
 				}

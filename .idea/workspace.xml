@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="Hoidontarve % working">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -22,6 +32,11 @@
     </option>
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
       <RepoCoordinatesHolder>
@@ -46,26 +61,62 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "e7b26348-1a67-4f64-9e82-d5e5410c8f24",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu",
+    "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28691983",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb",
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="entity" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Laakariasemasimulaattori" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,6 +136,7 @@
       <workItem from="1676666258031" duration="2631000" />
       <workItem from="1676669106640" duration="3448000" />
       <workItem from="1677003857006" duration="572000" />
+      <workItem from="1677597523883" duration="13908000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>

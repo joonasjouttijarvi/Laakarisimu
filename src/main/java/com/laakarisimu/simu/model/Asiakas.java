@@ -2,10 +2,13 @@ package com.laakarisimu.simu.model;
 
 
 import com.laakarisimu.eduni.distributions.Negexp;
+import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.framework.Trace;
 
 public class Asiakas {
+
+
 	enum hoidontarve {
 		LIEVA, KOHTALAINEN, VAKAVA
 	}
@@ -18,7 +21,7 @@ public class Asiakas {
 	private double jonotusAika;
 
 	private double palveluaika;
-	private static hoidontarve hoidontarve;
+	private static com.laakarisimu.simu.model.Asiakas.hoidontarve hoidontarve;
 	public static int lieva=0;
 	public static int kohtalainen=0;
 	public static int vakava=0;
@@ -48,8 +51,15 @@ public class Asiakas {
 	public void setSaapumisaika(double saapumisaika) {
 		this.saapumisaika = saapumisaika;
 	}
-	
 
+
+	public double getJonotusAika() {
+		return jonotusAika;
+	}
+
+	public double getPalveluaika() {
+		return palveluaika;
+	}
 
 	public void setJonotusAika() {
 		jonotusAika = +Kello.getInstance().getAika() - saapumisaika;
@@ -82,6 +92,9 @@ public class Asiakas {
 	public hoidontarve getHoidontarve() {
 		return hoidontarve;
 	}
+	
+		
+	
 
 	public void raportti() {
 		Trace.out(Trace.Level.INFO, "\nAsiakas " + id + " valmis! ");
@@ -95,6 +108,9 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " palveluaika: " + palveluaika);
 		Trace.out(Trace.Level.INFO, "Asiakas " + id + " hoidontarve: " + hoidontarve);
 		Trace.out(Trace.Level.INFO, "hoidontarpeet: lieva" + lieva + " kohtalainen" + kohtalainen + " vakava" + vakava);
+
+
+		
 		
 	}
 }
