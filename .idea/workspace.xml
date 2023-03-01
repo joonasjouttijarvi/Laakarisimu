@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="added clearDatabase, getPotilasbyId, getKaikkiPotilaat.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" afterDir="false" />
+    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="t/c">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/framework/IMoottori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;e7b26348-1a67-4f64-9e82-d5e5410c8f24&quot;,
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;91e44a71-5c35-4691-bfbd-a5acf74fdb84&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -77,8 +79,8 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;,
-      &quot;mysql&quot;
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ]
   }
 }</component>
@@ -138,6 +140,8 @@
       <workItem from="1677597523883" duration="13908000" />
       <workItem from="1677614966434" duration="316000" />
       <workItem from="1677624480065" duration="304000" />
+      <workItem from="1677628498164" duration="1607000" />
+      <workItem from="1677630117781" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
@@ -209,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677626252337</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="t/c">
+      <created>1677627511670</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677627511670</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +258,7 @@
     <MESSAGE value="Database fix for hoidontarve" />
     <MESSAGE value="code cleanup" />
     <MESSAGE value="added clearDatabase, getPotilasbyId, getKaikkiPotilaat." />
-    <option name="LAST_COMMIT_MESSAGE" value="added clearDatabase, getPotilasbyId, getKaikkiPotilaat." />
+    <MESSAGE value="t/c" />
+    <option name="LAST_COMMIT_MESSAGE" value="t/c" />
   </component>
 </project>

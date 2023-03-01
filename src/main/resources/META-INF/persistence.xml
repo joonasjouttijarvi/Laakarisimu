@@ -6,10 +6,10 @@
   <persistence-unit name="Potilastiedot">
     <class>entity.Potilaat</class>
     <properties>
-      <property name="hibernate.connection.url" value="jdbc:mariadb://mysql.metropolia.fi/joonajou"/>
+      <property name="hibernate.connection.url" value="jdbc:mariadb://10.114.34.15:3306/Laakarisimudb"/>
       <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
-      <property name="hibernate.connection.username" value="joonajou"/>
-      <property name="hibernate.connection.password" value="tietokantapalvelin"/>
+      <property name="hibernate.connection.username" value="simu"/>
+      <property name="hibernate.connection.password" value="simu"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.show_sql" value="true"/>
     </properties>
