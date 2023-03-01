@@ -22,7 +22,6 @@ public class Sairaanhoitaja {
 	private int palvellutAsiakkaat;
 
 	private boolean varattu = false;
-	PotilasDao potilasDao = new PotilasDao();
 	IDao dao = new PotilasDao();
 	
 
