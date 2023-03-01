@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="LaakariDB" uuid="e7b26348-1a67-4f64-9e82-d5e5410c8f24">
+    <data-source source="LOCAL" name="Potilastiedot/Hibernate" uuid="adaf134c-45d5-4cbf-8cf9-159dd7a95bbe">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://mysql.metropolia.fi:3306</jdbc-url>
+      <jdbc-url>jdbc:mariadb://10.114.34.15:3306/Laakarisimudb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

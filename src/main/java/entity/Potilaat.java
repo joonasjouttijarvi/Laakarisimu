@@ -12,7 +12,7 @@ public class Potilaat {
     @Column(name = "jonotusaika", nullable = true, precision = 0)
     private Double jonotusaika;
     @Basic
-    @Column(name = "hoidontarve", nullable = true, length = 15)
+    @Column(name = "hoidontarve", nullable = true, length = 20)
     private String hoidontarve;
     @Basic
     @Column(name = "palveluaika", nullable = true, precision = 0)
