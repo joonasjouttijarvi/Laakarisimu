@@ -1,6 +1,7 @@
 package com.laakarisimu.simu.model;
 
 import com.laakarisimu.eduni.distributions.ContinuousGenerator;
+import com.laakarisimu.simu.dao.IDao;
 import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.framework.Tapahtuma;
@@ -21,7 +22,7 @@ public class Sairaanhoitaja {
 	private int palvellutAsiakkaat;
 
 	private boolean varattu = false;
-	PotilasDao potilasDao = new PotilasDao();
+	IDao dao = new PotilasDao();
 	
 
 	public Sairaanhoitaja(ContinuousGenerator generator, Tapahtumalista tapahtumalista, TapahtumanTyyppi tyyppi){
@@ -52,7 +53,7 @@ public class Sairaanhoitaja {
 		tyotunnit+=palveluaika;
 		palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi, Kello.getInstance().getAika()+palveluaika));
-		potilasDao.lisaaPotilas(this.jono.peek());
+		dao.lisaaPotilas(this.jono.peek());
 
 	}
 

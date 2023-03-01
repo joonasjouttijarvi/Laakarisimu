@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="t/c">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7b26348-1a67-4f64-9e82-d5e5410c8f24.xml" beforeDir="false" />
+    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="changed db server">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/IDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -141,7 +140,8 @@
       <workItem from="1677614966434" duration="316000" />
       <workItem from="1677624480065" duration="304000" />
       <workItem from="1677628498164" duration="1607000" />
-      <workItem from="1677630117781" duration="361000" />
+      <workItem from="1677630117781" duration="2002000" />
+      <workItem from="1677669822854" duration="474000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677627511670</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="changed db server">
+      <created>1677630639126</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677630639126</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +244,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Main" />
+                        <option value="Joonas" />
                       </list>
                     </value>
                   </entry>
@@ -259,6 +266,7 @@
     <MESSAGE value="code cleanup" />
     <MESSAGE value="added clearDatabase, getPotilasbyId, getKaikkiPotilaat." />
     <MESSAGE value="t/c" />
-    <option name="LAST_COMMIT_MESSAGE" value="t/c" />
+    <MESSAGE value="changed db server" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed db server" />
   </component>
 </project>
