@@ -6,7 +6,7 @@ import entity.Potilaat;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
-public class PotilasDao {
+public class PotilasDao implements IDao {
 
 
     public void lisaaPotilas(Asiakas a) {
