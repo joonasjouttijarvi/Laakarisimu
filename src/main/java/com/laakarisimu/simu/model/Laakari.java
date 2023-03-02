@@ -20,7 +20,7 @@ public class Laakari {
 	private TapahtumanTyyppi skeduloitavanTapahtumanTyyppi; 
     private int palkka;
     private double tyotunnit;
-    private int palvellutAsiakkaat;
+    private static int palvellutAsiakkaat;
 	private boolean varattu = false;
 
 

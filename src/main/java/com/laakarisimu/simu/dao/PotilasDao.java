@@ -5,11 +5,21 @@ import datasource.MariaDbConn;
 import entity.Potilaat;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
+import org.hibernate.Session;
+
+import java.util.List;
 
 public class PotilasDao implements IDao {
 
     EntityManager em = MariaDbConn.getEntityManager();
     EntityTransaction tx = em.getTransaction();
+    Session session;
+
+    @Override
     public void lisaaPotilas(Asiakas a) {
         try {
             tx.begin();
@@ -24,7 +34,7 @@ public class PotilasDao implements IDao {
             e.printStackTrace();
         }
     }
-
+    @Override
     public void clearDatabase() {
         try {
             tx.begin();
@@ -36,17 +46,18 @@ public class PotilasDao implements IDao {
         }
     }
 
-    public void getKaikkiPotilaat() {
-        try {
-            tx.begin();
-            em.createQuery("SELECT * FROM Potilaat p").getResultList();
-            tx.commit();
-            em.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
+    @Override
+    public List<Potilaat>getKaikkiPotilaat() {
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Potilaat> cq = cb.createQuery(Potilaat.class);
+        Root<Potilaat> rootEntry = cq.from(Potilaat.class);
+        CriteriaQuery<Potilaat> all = cq.select(rootEntry);
+
+        TypedQuery<Potilaat> allQuery = session.createQuery(all);
+        return allQuery.getResultList();
+    }
+    @Override
     public void getPotilasById(int id) {
         try {
             tx.begin();

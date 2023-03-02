@@ -21,7 +21,8 @@ public class Asiakas {
 	private double jonotusAika;
 
 	private double palveluaika;
-	private static com.laakarisimu.simu.model.Asiakas.hoidontarve hoidontarve;
+	private hoidontarve hoidontarve;
+	
 	public static int lieva=0;
 	public static int kohtalainen=0;
 	public static int vakava=0;
@@ -30,7 +31,7 @@ public class Asiakas {
 	public Asiakas() {
 		id = i++;
 		jonotusAika = 0;
-		hoidontarve = null;
+		hoidontarve=null;
 		palveluaika=0;
 		saapumisaika = Kello.getInstance().getAika();
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo " + saapumisaika);
@@ -77,13 +78,13 @@ public class Asiakas {
 		Negexp negexp = new Negexp(0.3);
 		double h = negexp.sample();
 		if (h <= 0.5) {
-			hoidontarve = Asiakas.hoidontarve.LIEVA;
+			hoidontarve = hoidontarve.LIEVA;
 			lieva++;
 		} else if (h < 0.8) {
-			hoidontarve = Asiakas.hoidontarve.KOHTALAINEN;
+			hoidontarve = hoidontarve.KOHTALAINEN;
 			kohtalainen++;
 		} else {
-			hoidontarve = Asiakas.hoidontarve.VAKAVA;
+			hoidontarve = hoidontarve.VAKAVA;
 			vakava++;
 		}
 		
