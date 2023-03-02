@@ -154,7 +154,7 @@
                         <Font name="Lato Regular" size="22.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="1000.0" />
+                        <Insets left="970.0" />
                      </HBox.margin>
                   </Label>
                   <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
