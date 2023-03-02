@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -39,8 +40,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private TextField viive;
 
 	@FXML BarChart<String,Integer> palvellutAsiakkaatChart;
-	//@FXML CategoryAxis xAxispalvellutAsiakkaat;
-	//private ObservableList<String> palvelevanNimi = FXCollections.observableArrayList();
+	@FXML CategoryAxis xAxisPalvellutAsiakkaat;
+	@FXML NumberAxis yAxisPalvellutAsiakkaat;
 
 	@FXML 
 	private Label tulos;
@@ -183,19 +184,21 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@Override
 	public void setProgress(double progress) {
-		progressBar.setProgress(progress);
-		
+		progressBar.setProgress(progress);	
 	}
 
 	@Override
 	public void setPalvellutAsiakkaatChart(String nimi, int maara){
 		XYChart.Series<String,Integer> series1 = new XYChart.Series<>();
-		XYChart.Series<String,Integer> series2 = new XYChart.Series<>();
-		XYChart.Series<String,Integer> series3 = new XYChart.Series<>();
-		series1.getData().add(new XYChart.Data<>(nimi, maara));
-		series2.getData().add(new XYChart.Data<>(nimi, maara));
-		series3.getData().add(new XYChart.Data<>(nimi, maara));
-		palvellutAsiakkaatChart.getData().addAll(series1, series2, series3);
+		//series1.getData().add(new XYChart.Data<>(nimi, maara));
+		//xAxisPalvellutAsiakkaat = new CategoryAxis();
+		yAxisPalvellutAsiakkaat = new NumberAxis();
+		//xAxisPalvellutAsiakkaat.setAnimated(true);
+		yAxisPalvellutAsiakkaat.setAnimated(false);
+		palvellutAsiakkaatChart.setAnimated(false);
+		palvellutAsiakkaatChart.getData().add(series1);
+
+		
 	}
 
 }
