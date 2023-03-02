@@ -4,12 +4,14 @@ import java.text.DecimalFormat;
 import com.laakarisimu.controller.IKontrolleriMtoV;
 import com.laakarisimu.eduni.distributions.Negexp;
 import com.laakarisimu.eduni.distributions.Normal;
-
+import com.laakarisimu.simu.dao.IDao;
+import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.*;
 
 public class OmaMoottori extends Moottori {
 	
 	private Saapumisprosessi saapumisprosessi;
+	PotilasDao dao = new PotilasDao();
 
 
 	public OmaMoottori(IKontrolleriMtoV kontrolleri){
