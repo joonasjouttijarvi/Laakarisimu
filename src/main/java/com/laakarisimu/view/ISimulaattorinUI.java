@@ -10,7 +10,8 @@ public interface ISimulaattorinUI {
 	double getLaakarinPalveluaika();
 	double getKassanPalveluaika();
 
-	public void setPalvellutAsiakkaat(int palvellutAsiakkaat);
+	public void setKaikkiPalvellut(int palvellutAsiakkaat);
+	public void setSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs);
 	public void setLaakarinPalvelemat(int laakarinPalvelematAs);
 	public void setLaakarinPalkka(double palkka);
 	public void setSairaanhoitajanPalkka(double palkka);

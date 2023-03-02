@@ -44,6 +44,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML
 	private Label kaikkiPalvellut;
 	@FXML
+	private Label sairaanhoitajanPalvelemat;
+	@FXML
 	private Label laakarinPalvelemat;
 	@FXML
 	private Label laakarinPalkka;
@@ -94,8 +96,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		tulos.setText(df.format(aika));
 	}
 	@Override
-	public void setPalvellutAsiakkaat(int palvellutAsiakkaat) {
+	public void setKaikkiPalvellut(int palvellutAsiakkaat){
 		kaikkiPalvellut.setText(Integer.toString(palvellutAsiakkaat));
+	}
+
+	@Override
+	public void setSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs) {
+		sairaanhoitajanPalvelemat.setText(Integer.toString(sairaanhoitajanPalvelematAs));
 	}
 	@Override
 	public void setLaakarinPalvelemat(int laakarinPalvelematAs){

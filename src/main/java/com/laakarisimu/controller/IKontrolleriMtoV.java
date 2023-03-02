@@ -5,7 +5,8 @@ public interface IKontrolleriMtoV {
 		// Rajapinta, joka tarjotaan moottorille:
 		
 		public void naytaLoppuaika(double aika);
-		public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat);
+		public void naytaKaikkiPalvellut(int palvellutAsiakkaat);
+		public void naytaSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs);
 		public void naytaLaakarinPalvelemat(int laakarinPalvelematAs);
 		public void naytaLaakarinPalkka(double palkka);
 		public void naytaSairaanhoitajanPalkka(double palkka);

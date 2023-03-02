@@ -147,7 +147,7 @@
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="45.0" prefWidth="1185.0" style="-fx-background-color: #6DC7F6;" BorderPane.alignment="TOP_RIGHT">
+            <HBox prefHeight="45.0" prefWidth="1228.0" style="-fx-background-color: #6DC7F6;" BorderPane.alignment="TOP_RIGHT">
                <children>
                   <Label prefHeight="47.0" prefWidth="161.0" text="Lääkäriasema" textFill="#f8f8f8">
                      <font>
@@ -314,27 +314,6 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="294.0">
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label text="Tyytyväisyysprosentti:">
-                                 <font>
-                                    <Font name="Lato Regular" size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Label fx:id="tyytyvaisyysprosentti" text="-">
-                           <font>
-                              <Font name="Lato Regular" size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
                   <VBox alignment="CENTER" prefHeight="180.0" prefWidth="294.0">
                      <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="294.0">
@@ -429,10 +408,33 @@
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <BarChart fx:id="hoidontarveChart">
+                  <BarChart fx:id="palvellutAsiakkaatChart">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="hoidontarveChart" GridPane.columnIndex="1">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="hoidonkestoChart" GridPane.rowIndex="1">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="palkkaChart" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>

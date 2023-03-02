@@ -65,8 +65,12 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		Platform.runLater(()->ui.setLoppuaika(aika));
 	}
 	@Override
-	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
-		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
+	public void naytaKaikkiPalvellut(int palvellutAsiakkaat){
+		Platform.runLater(() -> ui.setKaikkiPalvellut(palvellutAsiakkaat));
+	}
+	@Override
+	public void naytaSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs) {
+		Platform.runLater(()->ui.setSairaanhoitajanPalvelemat(sairaanhoitajanPalvelematAs)); 
 	}
 	@Override
 	public void naytaLaakarinPalvelemat(int laakarinPalvelematAs){
