@@ -60,6 +60,9 @@ public class OmaMoottori extends Moottori {
 				a.setPoistumisaika(Kello.getInstance().getAika());
 				a.raportti();
 				kontrolleri.naytaProgress(getProgress());
+				kontrolleri.naytaPalvellutAsiakkaatChart("Sairaanhoitaja",sairaanhoitaja.getPalvellutAsiakkaat());
+				//kontrolleri.naytaPalvellutAsiakkaatChart("Lääkäri", laakari.getPalvellutAsiakkaat());
+				//kontrolleri.naytaPalvellutAsiakkaatChart("Yhteensä", sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
 				break;
 			default:
 				break;
@@ -85,9 +88,7 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaHoidontarveLieva((lievat));
 		kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
 		kontrolleri.naytaHoidontarveVakava((vakavat));
-		kontrolleri.naytaPalvellutAsiakkaatChart("Sairaanhoitaja",sairaanhoitaja.getPalvellutAsiakkaat());
-		kontrolleri.naytaPalvellutAsiakkaatChart("Lääkäri", laakari.getPalvellutAsiakkaat());
-		kontrolleri.naytaPalvellutAsiakkaatChart("Yhteensä", sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
+
 		}
 
 	@Override
