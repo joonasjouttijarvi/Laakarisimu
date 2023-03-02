@@ -65,8 +65,12 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		Platform.runLater(()->ui.setLoppuaika(aika));
 	}
 	@Override
-	public void naytaPalvellutAsiakkaat(int palvellutAsiakkaat) {
-		Platform.runLater(()->ui.setPalvellutAsiakkaat(palvellutAsiakkaat)); 
+	public void naytaKaikkiPalvellut(int palvellutAsiakkaat){
+		Platform.runLater(() -> ui.setKaikkiPalvellut(palvellutAsiakkaat));
+	}
+	@Override
+	public void naytaSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs) {
+		Platform.runLater(()->ui.setSairaanhoitajanPalvelemat(sairaanhoitajanPalvelematAs)); 
 	}
 	@Override
 	public void naytaLaakarinPalvelemat(int laakarinPalvelematAs){
@@ -95,9 +99,14 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		Platform.runLater(() -> ui.setHoidontarveVakava(vakava/Asiakas.i));
 	}
 
-
 	@Override
 	public void naytaProgress(double progress) {
 		ui.setProgress(progress);
 	}
+
+	@Override
+	public void naytaPalvellutAsiakkaatChart(String nimi, int maara){
+		ui.setPalvellutAsiakkaatChart(nimi, maara);
 	}
+
+}
