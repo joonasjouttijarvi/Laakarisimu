@@ -410,9 +410,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <BarChart fx:id="palvellutAsiakkaatChart">
+                  <BarChart fx:id="palvellutAsiakkaatChart" title="Palvellut asiakkaat">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis label="Palvelupiste" prefWidth="260.0" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />

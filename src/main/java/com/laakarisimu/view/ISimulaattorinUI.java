@@ -1,5 +1,7 @@
 package com.laakarisimu.view;
 
+import javafx.scene.chart.BarChart;
+
 public interface ISimulaattorinUI {
 	
 	// Kontrolleri tarvitsee syötteitä, jotka se välittää Moottorille
@@ -18,6 +20,7 @@ public interface ISimulaattorinUI {
 	public void setHoidontarveLieva(double lieva);
 	public void setHoidontarveKohtalainen(double kohtalainen);
 	public void setHoidontarveVakava(double vakava);
+	public void setPalvellutAsiakkaatChart(String nimi, int maara);
 
 	
 	//Kontrolleri antaa käyttöliittymälle tuloksia, joita Moottori tuottaa 

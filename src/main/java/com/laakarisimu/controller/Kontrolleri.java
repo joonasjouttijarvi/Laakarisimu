@@ -99,9 +99,14 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		Platform.runLater(() -> ui.setHoidontarveVakava(vakava/Asiakas.i));
 	}
 
-
 	@Override
 	public void naytaProgress(double progress) {
 		ui.setProgress(progress);
 	}
+
+	@Override
+	public void naytaPalvellutAsiakkaatChart(String nimi, int maara){
+		ui.setPalvellutAsiakkaatChart(nimi, maara);
 	}
+
+}

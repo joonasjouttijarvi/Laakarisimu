@@ -18,4 +18,5 @@ public interface IKontrolleriMtoV {
 		public double getSairaanhoitajanPalveluaika();
 		public double getLaakarinPalveluaika();
 		public double getKassanPalveluaika();
+		public void naytaPalvellutAsiakkaatChart(String nimi, int maara);
 }
