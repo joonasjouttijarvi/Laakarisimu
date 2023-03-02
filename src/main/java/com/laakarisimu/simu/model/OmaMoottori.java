@@ -39,17 +39,17 @@ public class OmaMoottori extends Moottori {
 			
 			case SAAPUMINEN:
 				a = new Asiakas();
-				sairaanhoitaja.lisaaJonoon(a);
+				a.setHoidontarve();
+				if(a.getHoidontarve() != Asiakas.hoidontarve.LIEVA) {
+					laakari.lisaaJonoon(a);
+				} else {
+					sairaanhoitaja.lisaaJonoon(a);
+				}
 				saapumisprosessi.generoiSeuraava();
 				break;
 			case SAIRAANHOITAJAN_PALVELU:
 				a = sairaanhoitaja.otaJonosta();
-				if(a.getHoidontarve() != Asiakas.hoidontarve.LIEVA) {
-				laakari.lisaaJonoon(a);
-				}
-				else{
-					kassa.lisaaJonoon(a);
-				}
+				kassa.lisaaJonoon(a);
 				break;
 			case LAAKARIN_PALVELU:
 				a = laakari.otaJonosta();
@@ -74,7 +74,8 @@ public class OmaMoottori extends Moottori {
 		Trace.out(Trace.Level.INFO,"Lääkärin kustannukset " + laakari.getLaakarinKustannukset() + " euroa.");
 		Trace.out(Trace.Level.INFO,"Sairaanhoitajan kustannukset " + sairaanhoitaja.getSairaanhoitajanKustannukset() + " euroa.");
 		kontrolleri.naytaLoppuaika(Kello.getInstance().getAika());
-		kontrolleri.naytaPalvellutAsiakkaat(sairaanhoitaja.getPalvellutAsiakkaat());
+		kontrolleri.naytaKaikkiPalvellut(sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaSairaanhoitajanPalvelemat(sairaanhoitaja.getPalvellutAsiakkaat());
 		kontrolleri.naytaLaakarinPalvelemat(laakari.getPalvellutAsiakkaat());
 		kontrolleri.naytaLaakarinPalkka(laakari.getLaakarinKustannukset());
 		kontrolleri.naytaSairaanhoitajanPalkka(sairaanhoitaja.getSairaanhoitajanKustannukset());
@@ -84,6 +85,9 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaHoidontarveLieva((lievat));
 		kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
 		kontrolleri.naytaHoidontarveVakava((vakavat));
+		kontrolleri.naytaPalvellutAsiakkaatChart("Sairaanhoitaja",sairaanhoitaja.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalvellutAsiakkaatChart("Lääkäri", laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalvellutAsiakkaatChart("Yhteensä", sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
 		}
 
 	@Override
