@@ -8,7 +8,10 @@ import java.util.List;
 public interface IDao {
 
     void lisaaPotilas(Asiakas a);
+
     void clearDatabase();
+
     List<Potilaat> getKaikkiPotilaat();
+
     void getPotilasById(int id);
 }

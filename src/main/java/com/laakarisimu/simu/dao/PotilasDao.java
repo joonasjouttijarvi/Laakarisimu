@@ -17,7 +17,7 @@ public class PotilasDao implements IDao {
 
     EntityManager em = MariaDbConn.getEntityManager();
     EntityTransaction tx = em.getTransaction();
-    Session session;
+    Session session = em.unwrap(Session.class);
 
     @Override
     public void lisaaPotilas(Asiakas a) {
@@ -30,10 +30,11 @@ public class PotilasDao implements IDao {
             p.setPalveluaika(a.getPalveluaika());
             em.merge(p);
             tx.commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     @Override
     public void clearDatabase() {
         try {
@@ -46,9 +47,8 @@ public class PotilasDao implements IDao {
         }
     }
 
-
     @Override
-    public List<Potilaat>getKaikkiPotilaat() {
+    public List<Potilaat> getKaikkiPotilaat() {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Potilaat> cq = cb.createQuery(Potilaat.class);
         Root<Potilaat> rootEntry = cq.from(Potilaat.class);
@@ -57,11 +57,12 @@ public class PotilasDao implements IDao {
         TypedQuery<Potilaat> allQuery = session.createQuery(all);
         return allQuery.getResultList();
     }
+
     @Override
     public void getPotilasById(int id) {
         try {
             tx.begin();
-            em.createQuery("SELECT * FROM Potilaat p WHERE p.id = :id").setParameter("id", id).getResultList();
+            em.createQuery("SELECT * FROM Potilaat WHERE p.id = :id").setParameter("id", id).getResultList();
             tx.commit();
             em.close();
         } catch (Exception e) {
@@ -69,4 +70,3 @@ public class PotilasDao implements IDao {
         }
     }
 }
-

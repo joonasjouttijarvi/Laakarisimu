@@ -4,12 +4,15 @@ import java.text.DecimalFormat;
 import com.laakarisimu.controller.IKontrolleriMtoV;
 import com.laakarisimu.eduni.distributions.Negexp;
 import com.laakarisimu.eduni.distributions.Normal;
+
+import com.laakarisimu.simu.dao.IDao;
 import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.*;
 
 public class OmaMoottori extends Moottori {
 	
 	private Saapumisprosessi saapumisprosessi;
+	private IDao dao = new PotilasDao();
 
 
 	public OmaMoottori(IKontrolleriMtoV kontrolleri){
@@ -23,6 +26,7 @@ public class OmaMoottori extends Moottori {
 		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
+
 	
 
 	@Override
@@ -60,9 +64,7 @@ public class OmaMoottori extends Moottori {
 				a.setPoistumisaika(Kello.getInstance().getAika());
 				a.raportti();
 				kontrolleri.naytaProgress(getProgress());
-				kontrolleri.naytaPalvellutAsiakkaatChart("Sairaanhoitaja",sairaanhoitaja.getPalvellutAsiakkaat());
-				//kontrolleri.naytaPalvellutAsiakkaatChart("Lääkäri", laakari.getPalvellutAsiakkaat());
-				//kontrolleri.naytaPalvellutAsiakkaatChart("Yhteensä", sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
+				dao.lisaaPotilas(a);
 				break;
 			default:
 				break;
@@ -88,7 +90,18 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaHoidontarveLieva((lievat));
 		kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
 		kontrolleri.naytaHoidontarveVakava((vakavat));
-
+		kontrolleri.naytaPalvellutAsiakkaatChart("Sairaanhoitaja",sairaanhoitaja.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalvellutAsiakkaatChart("Lääkäri", laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalvellutAsiakkaatChart("Yhteensä", sairaanhoitaja.getPalvellutAsiakkaat() + laakari.getPalvellutAsiakkaat());
+		kontrolleri.naytaHoidontarveChart("Lievä", lievat);
+		kontrolleri.naytaHoidontarveChart("Kohtalainen", kohtalaiset);
+		kontrolleri.naytaHoidontarveChart("Vakava", vakavat);
+		kontrolleri.naytaHoidontarveChart("Kokonaishoidontarve",lievat+kohtalaiset+vakavat);
+		kontrolleri.naytaHoidonkestoChart("Lääkäri", (int) (laakari.getTyotunnit()/laakari.getPalvellutAsiakkaat()));
+		kontrolleri.naytaHoidonkestoChart("Sairaanhoitaja", sairaanhoitaja.getTyotunnit()/sairaanhoitaja.getPalvellutAsiakkaat());
+		kontrolleri.naytaPalkkaChart("lääkärin palkka", laakari.getLaakarinKustannukset());
+		kontrolleri.naytaPalkkaChart("Sairaanhoitajan palkka", sairaanhoitaja.getSairaanhoitajanKustannukset());
+		kontrolleri.naytaPalkkaChart("Kokonaiskustannukset", laakari.getLaakarinKustannukset()+sairaanhoitaja.getSairaanhoitajanKustannukset());
 		}
 
 	@Override
@@ -110,7 +123,5 @@ public class OmaMoottori extends Moottori {
 	public double getKassanPalveluaika(){
 		return kontrolleri.getKassanPalveluaika();
 	}
-
-	
 
 }
