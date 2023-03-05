@@ -232,8 +232,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private TableColumn<Potilaat, Double> jonotusaikaColumn;
 	@FXML
 	private TableColumn<Potilaat, Double> palveluaikaColumn;
-	@FXML
-	private Button update;
+
 	PotilasDao potilasDao=new PotilasDao();
 
 	@Override
@@ -245,6 +244,4 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
 
 	}
-
-	
 }
