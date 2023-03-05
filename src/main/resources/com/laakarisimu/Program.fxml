@@ -107,7 +107,8 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="update" layoutX="102.0" layoutY="88.0" mnemonicParsing="false" onAction="#tietokanta" text="Button" />
+                                    <Button fx:id="update" layoutX="102.0" layoutY="88.0" mnemonicParsing="false" onAction="#tietokanta" text="Refresh" />
+                                    <Button layoutX="105.0" layoutY="141.0" mnemonicParsing="false" onAction="#clearDatabase" text="Clear " />
                                  </children>
                               </AnchorPane>
                         </content>
