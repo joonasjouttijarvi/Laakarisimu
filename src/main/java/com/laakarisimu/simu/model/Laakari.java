@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 public class Laakari {
 
-	private LinkedList<Asiakas> jono = new LinkedList<Asiakas>();
+	private LinkedList<Asiakas> jono = new LinkedList<>();
 	
 	private ContinuousGenerator generator;
 	private Tapahtumalista tapahtumalista;

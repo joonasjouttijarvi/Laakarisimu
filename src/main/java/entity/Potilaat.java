@@ -76,4 +76,5 @@ public class Potilaat {
         result = 31 * result + (palveluaika != null ? palveluaika.hashCode() : 0);
         return result;
     }
+
 }
