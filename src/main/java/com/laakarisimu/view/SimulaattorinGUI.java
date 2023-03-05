@@ -3,7 +3,10 @@ package com.laakarisimu.view;
 
 import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
+import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Trace;
+import com.laakarisimu.simu.model.Asiakas;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +20,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -61,6 +66,21 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private Label hoidontarveKohtalainen;
 	@FXML
 	private Label hoidontarveVakava;
+
+	@FXML
+	private TableView<?> tietokantaView;
+	@FXML
+	private TableColumn<?,?> idColumn;
+	@FXML
+	private TableColumn<?,?> hoidontarveColumn;
+	@FXML
+	private TableColumn<?,?> jonotusaikaColumn;
+	@FXML
+	private TableColumn<?,?> palveluaikaColumn;
+
+	
+
+
 
 	@FXML
 	private ProgressBar progressBar;
@@ -200,6 +220,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 		
 	}
+
+	
 
 }
 	

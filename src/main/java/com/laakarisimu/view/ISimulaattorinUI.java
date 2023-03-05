@@ -1,5 +1,7 @@
 package com.laakarisimu.view;
 
+import com.laakarisimu.simu.model.Asiakas;
+
 import javafx.scene.chart.BarChart;
 
 public interface ISimulaattorinUI {
