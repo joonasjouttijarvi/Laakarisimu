@@ -21,6 +21,9 @@ public interface ISimulaattorinUI {
 	public void setHoidontarveKohtalainen(double kohtalainen);
 	public void setHoidontarveVakava(double vakava);
 	public void setPalvellutAsiakkaatChart(String nimi, int maara);
+	public void setHoidontarveChart(String nimi, double maara);
+	public void setHoidonkestoChart(String nimi,int kesto);
+	public void setPalkkaChart(String nimi,double palkka);
 
 	
 	//Kontrolleri antaa käyttöliittymälle tuloksia, joita Moottori tuottaa 

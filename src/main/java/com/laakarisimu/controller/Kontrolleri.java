@@ -106,7 +106,20 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 
 	@Override
 	public void naytaPalvellutAsiakkaatChart(String nimi, int maara){
-		ui.setPalvellutAsiakkaatChart(nimi, maara);
+		Platform.runLater(()-> ui.setPalvellutAsiakkaatChart(nimi, maara));
 	}
+	@Override
+	public void naytaHoidontarveChart(String nimi, double maara){
+		Platform.runLater(()-> ui.setHoidontarveChart(nimi, maara));
+	}
+	@Override
+	public void naytaHoidonkestoChart(String nimi, int kesto){
+		Platform.runLater(()-> ui.setHoidonkestoChart(nimi, kesto));
+	}
+	@Override
+	public void naytaPalkkaChart(String nimi, double palkka){
+		Platform.runLater(()-> ui.setPalkkaChart(nimi, palkka));
+	}
+
 
 }

@@ -22,7 +22,7 @@ public class Sairaanhoitaja {
 	private int palvellutAsiakkaat;
 
 	private boolean varattu = false;
-	IDao dao = new PotilasDao();
+
 	
 
 	public Sairaanhoitaja(ContinuousGenerator generator, Tapahtumalista tapahtumalista, TapahtumanTyyppi tyyppi){
@@ -52,8 +52,6 @@ public class Sairaanhoitaja {
 		tyotunnit+=palveluaika;
 		palvellutAsiakkaat++;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi, Kello.getInstance().getAika()+palveluaika));
-		dao.lisaaPotilas(this.jono.peek());
-
 	}
 
 	public boolean onVarattu(){
@@ -73,6 +71,9 @@ public class Sairaanhoitaja {
     }
 	public int getPalvellutAsiakkaat(){
 		return palvellutAsiakkaat;
+	}
+	public int getTyotunnit(){
+		return tyotunnit;
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.laakarisimu.view;
 
-
 import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
 import com.laakarisimu.simu.framework.Trace;
@@ -21,13 +20,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.text.DecimalFormat;
-
-
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
-    private TextField asiakkaanSaapumisTiheys;
+	private TextField asiakkaanSaapumisTiheys;
 	@FXML
 	private TextField sairaanhoitajanPalveluaika;
 	@FXML
@@ -39,11 +38,16 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@FXML
 	private TextField viive;
 
-	@FXML BarChart<String,Integer> palvellutAsiakkaatChart;
-	@FXML CategoryAxis xAxisPalvellutAsiakkaat;
-	@FXML NumberAxis yAxisPalvellutAsiakkaat;
+	@FXML
+	BarChart<String, Number> palvellutAsiakkaatChart;
+	@FXML
+	BarChart<String, Number> hoidontarveChart;
+	@FXML
+	BarChart<String, Number> hoidonkestoChart;
+	@FXML
+	BarChart<String, Number> palkkaChart;
 
-	@FXML 
+	@FXML
 	private Label tulos;
 	@FXML
 	private Label kaikkiPalvellut;
@@ -64,7 +68,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
 	private ProgressBar progressBar;
-	
+
 	private IKontrolleriVtoM kontrolleri;
 
 	@Override
@@ -81,8 +85,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		}
 	}
 
-
-	//Käyttöliittymän rajapintametodit (kutsutaan kontrollerista)
+	// Käyttöliittymän rajapintametodit (kutsutaan kontrollerista)
 
 	@Override
 	public double getAika() {
@@ -99,8 +102,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		DecimalFormat df = new DecimalFormat("#.##");
 		tulos.setText(df.format(aika));
 	}
+
 	@Override
-	public void setKaikkiPalvellut(int palvellutAsiakkaat){
+	public void setKaikkiPalvellut(int palvellutAsiakkaat) {
 		kaikkiPalvellut.setText(Integer.toString(palvellutAsiakkaat));
 	}
 
@@ -108,32 +112,37 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	public void setSairaanhoitajanPalvelemat(int sairaanhoitajanPalvelematAs) {
 		sairaanhoitajanPalvelemat.setText(Integer.toString(sairaanhoitajanPalvelematAs));
 	}
+
 	@Override
-	public void setLaakarinPalvelemat(int laakarinPalvelematAs){
+	public void setLaakarinPalvelemat(int laakarinPalvelematAs) {
 		laakarinPalvelemat.setText(Integer.toString(laakarinPalvelematAs));
 	}
+
 	@Override
-	public void setLaakarinPalkka(double palkka){
+	public void setLaakarinPalkka(double palkka) {
 		DecimalFormat df = new DecimalFormat("#.##");
 		laakarinPalkka.setText(df.format(palkka));
 	}
+
 	@Override
-	public void setSairaanhoitajanPalkka(double palkka){
+	public void setSairaanhoitajanPalkka(double palkka) {
 		sairaanhoitajanPalkka.setText(Double.toString(palkka));
 	}
+
 	@Override
-	public void setHoidontarveLieva(double lieva){
+	public void setHoidontarveLieva(double lieva) {
 		hoidontarveLieva.setText(Double.toString(lieva));
 	}
+
 	@Override
-	public void setHoidontarveKohtalainen(double kohtalainen){
+	public void setHoidontarveKohtalainen(double kohtalainen) {
 		hoidontarveKohtalainen.setText(Double.toString(kohtalainen));
 	}
+
 	@Override
-	public void setHoidontarveVakava(double vakava){
+	public void setHoidontarveVakava(double vakava) {
 		hoidontarveVakava.setText(Double.toString(vakava));
 	}
-
 
 	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
@@ -145,7 +154,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private void initialize() {
 		Trace.setTraceLevel(Trace.Level.INFO);
 		kontrolleri = new Kontrolleri(this);
-		
 	}
 
 	@FXML
@@ -162,44 +170,62 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private void nopeuta() {
 		kontrolleri.nopeuta();
 	}
+
 	@FXML
-	public double getAsiakkaanSaapumistiheys(){
+	public double getAsiakkaanSaapumistiheys() {
 		return Double.parseDouble(asiakkaanSaapumisTiheys.getText());
 	}
 
 	@FXML
-	public double getSairaanhoitajanPalveluaika(){
+	public double getSairaanhoitajanPalveluaika() {
 		return Double.parseDouble(sairaanhoitajanPalveluaika.getText());
 	}
 
 	@FXML
-	public double getLaakarinPalveluaika(){
+	public double getLaakarinPalveluaika() {
 		return Double.parseDouble(laakarinPalveluaika.getText());
 	}
 
 	@FXML
-	public double getKassanPalveluaika(){
+	public double getKassanPalveluaika() {
 		return Double.parseDouble(kassanPalveluaika.getText());
 	}
 
 	@Override
 	public void setProgress(double progress) {
-		progressBar.setProgress(progress);	
+		progressBar.setProgress(progress);
+	}
+
+	// update bar chart with data
+	@Override
+	public void setPalvellutAsiakkaatChart(String nimi, int maara) {
+		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		series.setName(nimi);
+		series.getData().add(new XYChart.Data<>("", maara));
+		palvellutAsiakkaatChart.getData().add(series);
 	}
 
 	@Override
-	public void setPalvellutAsiakkaatChart(String nimi, int maara){
-		XYChart.Series<String,Integer> series1 = new XYChart.Series<>();
-		//series1.getData().add(new XYChart.Data<>(nimi, maara));
-		//xAxisPalvellutAsiakkaat = new CategoryAxis();
-		yAxisPalvellutAsiakkaat = new NumberAxis();
-		//xAxisPalvellutAsiakkaat.setAnimated(true);
-		yAxisPalvellutAsiakkaat.setAnimated(false);
-		palvellutAsiakkaatChart.setAnimated(false);
-		palvellutAsiakkaatChart.getData().add(series1);
-
-		
+	public void setHoidontarveChart(String nimi, double maara) {
+		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		series.setName(nimi);
+		series.getData().add(new XYChart.Data<>("", maara));
+		hoidontarveChart.getData().add(series);
 	}
 
+	@Override
+	public void setHoidonkestoChart(String nimi, int kesto) {
+		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		series.setName(nimi);
+		series.getData().add(new XYChart.Data<>("", kesto));
+		hoidonkestoChart.getData().add(series);
+	}
+
+	@Override
+	public void setPalkkaChart(String nimi, double palkka) {
+		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		series.setName(nimi);
+		series.getData().add(new XYChart.Data<>("", palkka));
+		palkkaChart.getData().add(series);
+	}
 }
-	
