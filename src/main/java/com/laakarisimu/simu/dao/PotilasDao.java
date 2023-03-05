@@ -13,8 +13,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.hibernate.Session;
 
-import java.util.List;
-
 public class PotilasDao implements IDao {
 
     EntityManager em = MariaDbConn.getEntityManager();
@@ -41,13 +39,14 @@ public class PotilasDao implements IDao {
     public void clearDatabase() {
         try {
             tx.begin();
-            em.createQuery("DELETE FROM Potilaat").executeUpdate();
+            em.createQuery("DELETE from Potilaat").executeUpdate();
+            em.createNativeQuery("ALTER TABLE Potilaat AUTO_INCREMENT = 1").executeUpdate();
             tx.commit();
-            em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
 
     @Override
     public ObservableList<Potilaat> getKaikkiPotilaat() {

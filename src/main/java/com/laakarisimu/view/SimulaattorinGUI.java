@@ -36,13 +36,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private TextField viive;
 
 	@FXML
-	BarChart<String, Number> palvellutAsiakkaatChart;
+	private BarChart<String, Number> palvellutAsiakkaatChart;
 	@FXML
-	BarChart<String, Number> hoidontarveChart;
+	private BarChart<String, Number> hoidontarveChart;
 	@FXML
-	BarChart<String, Number> hoidonkestoChart;
+	private BarChart<String, Number> hoidonkestoChart;
 	@FXML
-	BarChart<String, Number> palkkaChart;
+	private BarChart<String, Number> palkkaChart;
 	
 	@FXML
 	private Label tulos;
@@ -75,6 +75,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 			Parent root = FXMLLoader.load(getClass().getResource("../Program.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Lääkäriasema");
+			primaryStage.setResizable(true);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
@@ -243,5 +244,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		palveluaikaColumn.setCellValueFactory(new PropertyValueFactory<>("palveluaika"));
 		tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
 
+	}
+	@Override
+	public void clearDatabase(){
+		potilasDao.clearDatabase();
 	}
 }

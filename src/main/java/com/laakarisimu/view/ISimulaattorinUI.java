@@ -45,5 +45,6 @@ public interface ISimulaattorinUI {
 	public void setLoppuaika(double aika);
 
 	public void setProgress(double progress);
+	public void clearDatabase();
 
 }
