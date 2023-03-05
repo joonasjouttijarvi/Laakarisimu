@@ -55,6 +55,7 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 		return ui.getKassanPalveluaika();
 	}
 
+
 	@Override
 	public void nopeuta() { // nopeutetaan moottorisäiettä
 		moottori.setViive((long)(moottori.getViive()*0.9));
