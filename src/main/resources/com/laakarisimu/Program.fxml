@@ -12,6 +12,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -80,10 +81,13 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Button>
-                                    <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="438.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@icons/start.png" />
                                        </image>
+                                       <effect>
+                                          <ColorAdjust contrast="1.0" />
+                                       </effect>
                                     </ImageView>
                                     <HBox alignment="CENTER" layoutY="492.0" prefHeight="100.0" prefWidth="257.0">
                                        <children>
@@ -426,7 +430,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tietokantaView" layoutY="-30.0" prefHeight="741.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
+                              <TableView fx:id="tietokantaView" prefHeight="711.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columns>
                                     <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID" />
                                     <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0" text="Hoidontarve" />

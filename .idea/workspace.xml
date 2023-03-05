@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="barchart">
+    <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="Database view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/IKontrolleriMtoV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/controller/Kontrolleri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Kassa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Kassa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Laakari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Laakari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/OmaMoottori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Sairaanhoitaja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/TapahtumanTyyppi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/TapahtumanTyyppi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,31 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;91e44a71-5c35-4691-bfbd-a5acf74fdb84&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu 22.05.17&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28691983&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "91e44a71-5c35-4691-bfbd-a5acf74fdb84",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Ohjelmistotuotanto/Laakarisimu 22.05.17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28691983",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -155,7 +145,7 @@
       <workItem from="1677669822854" duration="474000" />
       <workItem from="1677739657473" duration="2459000" />
       <workItem from="1678022829177" duration="3200000" />
-      <workItem from="1678026758058" duration="7163000" />
+      <workItem from="1678026758058" duration="10499000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
@@ -262,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678023040942</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Database view">
+      <created>1678033981293</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678033981293</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Database view">
+      <created>1678036069141</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678036069141</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +308,7 @@
     <MESSAGE value="changed db server" />
     <MESSAGE value="cu" />
     <MESSAGE value="barchart" />
-    <option name="LAST_COMMIT_MESSAGE" value="barchart" />
+    <MESSAGE value="Database view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database view" />
   </component>
 </project>
