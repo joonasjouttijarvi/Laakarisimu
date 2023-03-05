@@ -9,6 +9,8 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -113,7 +115,7 @@
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#kaynnista" prefHeight="45.0" prefWidth="257.0" style="-fx-background-color: #9DD9F9;">
+                  <Button alignment="BASELINE_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#kaynnista" prefHeight="45.0" prefWidth="257.0" style="-fx-background-color: #9DD9F9;">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -403,65 +405,76 @@
          </right>
          <center>
             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Untitled Tab 1">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <tabs>
+                  <Tab text="Kaaviot">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <GridPane layoutX="204.0" layoutY="214.0" prefHeight="713.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
                                  <children>
                                     <BarChart fx:id="palvellutAsiakkaatChart" title="Palvellut asiakkaat">
-                                      <xAxis>
-                                        <CategoryAxis label="Palvelupiste" side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis side="LEFT" />
-                                      </yAxis>
+                                       <xAxis>
+                                          <CategoryAxis label="Palvelupiste" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
                                     </BarChart>
                                     <BarChart fx:id="hoidontarveChart" title="Hoidontarve" GridPane.columnIndex="1">
-                                      <xAxis>
-                                        <CategoryAxis label="Vakavuusaste" side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis side="LEFT" />
-                                      </yAxis>
+                                       <xAxis>
+                                          <CategoryAxis label="Vakavuusaste" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
                                     </BarChart>
                                     <BarChart fx:id="hoidonkestoChart" title="Hoidon kesto" GridPane.rowIndex="1">
-                                      <xAxis>
-                                        <CategoryAxis label="Keskimääräinen hoidon kesto" side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis side="LEFT" />
-                                      </yAxis>
+                                       <xAxis>
+                                          <CategoryAxis label="Keskimääräinen hoidon kesto" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
                                     </BarChart>
                                     <BarChart fx:id="palkkaChart" title="Palkat" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                      <xAxis>
-                                        <CategoryAxis label="Henkilökunnan palkat" side="BOTTOM" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis side="LEFT" />
-                                      </yAxis>
+                                       <xAxis>
+                                          <CategoryAxis label="Henkilökunnan palkat" side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
                                     </BarChart>
                                  </children>
                               </GridPane>
                            </children>
                         </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Untitled Tab 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
+                     </content>
+                  </Tab>
+                  <Tab text="Tietokanta">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tietokantaView" layoutX="223.0" layoutY="144.0" prefHeight="713.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID" />
+                                    <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0" text="Hoidontarve" />
+                                    <TableColumn fx:id="jonotusaikaColumn" prefWidth="176.0" text="Jonotusaika" />
+                                    <TableColumn fx:id="palveluaikaColumn" prefWidth="195.0" text="Palveluaika" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
             </TabPane>
          </center>
       </BorderPane>
