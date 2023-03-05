@@ -86,7 +86,7 @@
                                           <Image url="@icons/start.png" />
                                        </image>
                                        <effect>
-                                          <ColorAdjust contrast="1.0" />
+                                          <ColorAdjust />
                                        </effect>
                                     </ImageView>
                                     <HBox alignment="CENTER" layoutY="492.0" prefHeight="100.0" prefWidth="257.0">
