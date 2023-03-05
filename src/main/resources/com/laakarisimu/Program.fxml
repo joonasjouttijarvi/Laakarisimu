@@ -12,6 +12,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,125 +30,91 @@
          <left>
             <VBox prefHeight="844.0" prefWidth="257.0" style="-fx-background-color: #DEF2FD;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="59.0" prefWidth="257.0">
-                     <children>
-                        <TextField fx:id="aika" prefHeight="36.0" prefWidth="227.0" text="Simulointiaika">
-                           <HBox.margin>
-                              <Insets left="15.0" right="15.0" top="15.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="54.0" prefWidth="257.0">
-                     <children>
-                        <TextField fx:id="viive" prefHeight="36.0" prefWidth="227.0" text="Viive">
-                           <HBox.margin>
-                              <Insets left="15.0" right="15.0" top="10.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="26.0" prefWidth="257.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#nopeuta" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #9DD9F9;" text="Nopeuta">
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#hidasta" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #9DD9F9;" text="Hidasta">
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <Label prefHeight="18.0" prefWidth="173.0" text="Asiakkaiden saapumistiheys">
-                     <VBox.margin>
-                        <Insets left="50.0" top="40.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Lato Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="asiakkaanSaapumisTiheys">
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                     </VBox.margin></TextField>
-                  <Label prefHeight="20.0" prefWidth="173.0" text="Sairaanhoitajan palveluaika">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="50.0" top="15.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="sairaanhoitajanPalveluaika">
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Label text="Lääkärin palveluaika">
-                     <VBox.margin>
-                        <Insets left="67.0" top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Lato Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="laakarinPalveluaika">
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Label text="Kassan palveluaika">
-                     <VBox.margin>
-                        <Insets left="70.0" top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Lato Regular" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="kassanPalveluaika">
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Button alignment="BASELINE_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#kaynnista" prefHeight="45.0" prefWidth="257.0" style="-fx-background-color: #9DD9F9;">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/start.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets bottom="30.0" left="30.0" right="30.0" top="25.0" />
-                     </VBox.margin>
-                  </Button>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="257.0">
-                     <children>
-                        <Button fx:id="update" mnemonicParsing="false" text="Button" onAction="#tietokanta" />
-                        <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/runningOnHold.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </HBox>
-                  <ProgressBar fx:id="progressBar" prefHeight="28.0" prefWidth="257.0" progress="0.0">
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" />
-                     </VBox.margin>
-                  </ProgressBar>
+                  <TabPane prefHeight="796.0" prefWidth="257.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Parametrit">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="727.0" prefWidth="257.0">
+                                 <children>
+                                    <TextField fx:id="aika" layoutX="15.0" layoutY="14.0" prefHeight="36.0" prefWidth="227.0" text="Simulointiaika" />
+                                    <TextField fx:id="viive" layoutX="15.0" layoutY="68.0" prefHeight="36.0" prefWidth="227.0" text="Viive" />
+                                    <HBox layoutY="133.0" prefHeight="26.0" prefWidth="257.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#nopeuta" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #9DD9F9;" text="Nopeuta">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#hidasta" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #9DD9F9;" text="Hidasta">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="41.0" layoutY="180.0" prefHeight="18.0" prefWidth="173.0" text="Asiakkaiden saapumistiheys">
+                                       <font>
+                                          <Font name="Lato Regular" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="asiakkaanSaapumisTiheys" layoutX="48.0" layoutY="206.0" />
+                                    <Label layoutX="41.0" layoutY="231.0" prefHeight="20.0" prefWidth="173.0" text="Sairaanhoitajan palveluaika">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="sairaanhoitajanPalveluaika" layoutX="48.0" layoutY="276.0" />
+                                    <Label layoutX="69.0" layoutY="302.0" text="Lääkärin palveluaika">
+                                       <font>
+                                          <Font name="Lato Regular" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="laakarinPalveluaika" layoutX="48.0" layoutY="335.0" />
+                                    <Label layoutX="70.0" layoutY="370.0" text="Kassan palveluaika">
+                                       <font>
+                                          <Font name="Lato Regular" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kassanPalveluaika" layoutX="46.0" layoutY="400.0" />
+                                    <Button alignment="BASELINE_CENTER" defaultButton="true" layoutY="447.0" mnemonicParsing="false" onAction="#kaynnista" prefHeight="45.0" prefWidth="257.0" style="-fx-background-color: #9DD9F9;">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="94.0" layoutY="438.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/start.png" />
+                                       </image>
+                                       <effect>
+                                          <ColorAdjust />
+                                       </effect>
+                                    </ImageView>
+                                    <HBox alignment="CENTER" layoutY="492.0" prefHeight="100.0" prefWidth="257.0">
+                                       <children>
+                                          <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@icons/runningOnHold.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                    <ProgressBar fx:id="progressBar" layoutY="600.0" prefHeight="28.0" prefWidth="257.0" progress="0.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Tietokanta">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="update" layoutX="102.0" layoutY="88.0" mnemonicParsing="false" onAction="#tietokanta" text="Button" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <HBox prefHeight="54.0" prefWidth="257.0" />
                </children>
             </VBox>
          </left>
@@ -463,7 +430,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tietokantaView" layoutY="-30.0" prefHeight="741.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
+                              <TableView fx:id="tietokantaView" prefHeight="711.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columns>
                                     <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID" />
                                     <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0" text="Hoidontarve" />

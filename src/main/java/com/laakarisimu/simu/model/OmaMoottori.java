@@ -28,12 +28,9 @@ public class OmaMoottori extends Moottori {
 		laakari= new Laakari(new Normal(getLaakarinPalveluaika(),16), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
 		kassa = new Kassa(new Normal(getKassanPalveluaika(),6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
 		
-		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
+		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),4), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
-
-	
-
 	@Override
 	protected void alustukset() {
 		saapumisprosessi.generoiSeuraava(); // Ensimmäinen saapuminen järjestelmään
