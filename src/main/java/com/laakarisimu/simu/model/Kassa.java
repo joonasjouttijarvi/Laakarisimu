@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 public class Kassa {
 
-	private LinkedList<Asiakas> jono = new LinkedList<Asiakas>(); // Tietorakennetoteutus
+	private LinkedList<Asiakas> jono = new LinkedList<>();
 	
 	private ContinuousGenerator generator;
 	private Tapahtumalista tapahtumalista;
@@ -48,9 +48,6 @@ public class Kassa {
 		}
 		Trace.out(Trace.Level.INFO, "Asiakas" + jono.peek().getId()+" Maksaa ja lähtee");
 		varattu = true;
-
-		//TODO:
-		//laakariaseman tulot(asiakkaiden maksamat maksut)
         tulo+= palveluaika*4;
 		tapahtumalista.lisaa(new Tapahtuma(skeduloitavanTapahtumanTyyppi, Kello.getInstance().getAika()+palveluaika));
 	}

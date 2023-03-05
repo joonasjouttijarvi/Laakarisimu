@@ -22,5 +22,6 @@ public interface IKontrolleriMtoV {
 		void naytaHoidontarveChart(String nimi,double maara);
 		void naytaHoidonkestoChart(String nimi, int kesto);
 		void naytaPalkkaChart(String nimi, double palkka);
+		public void tietokanta();
 
 }

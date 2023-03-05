@@ -33,17 +33,17 @@ public class Sairaanhoitaja {
 	}
 
 
-	public void lisaaJonoon(Asiakas a){   // Jonon 1. asiakas aina palvelussa
+	public void lisaaJonoon(Asiakas a){
 		jono.add(a);
 		
 	}
 
-	public Asiakas otaJonosta(){  // Poistetaan palvelussa ollut
+	public Asiakas otaJonosta(){
 		varattu = false;
 		return jono.poll();
 	}
 
-	public void aloitaPalvelu(){  //Aloitetaan uusi palvelu, asiakas on jonossa palvelun aikana
+	public void aloitaPalvelu(){
 		double palveluaika = generator.sample();
 		jono.peek().setJonotusAika();
 		jono.peek().setPalveluaika(palveluaika);

@@ -132,6 +132,7 @@
                   </Button>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="257.0">
                      <children>
+                        <Button fx:id="update" mnemonicParsing="false" text="Button" onAction="#tietokanta" />
                         <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/runningOnHold.png" />
@@ -462,7 +463,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="tietokantaView" layoutX="223.0" layoutY="144.0" prefHeight="713.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="tietokantaView" layoutY="-30.0" prefHeight="741.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-30.0">
                                  <columns>
                                     <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID" />
                                     <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0" text="Hoidontarve" />
