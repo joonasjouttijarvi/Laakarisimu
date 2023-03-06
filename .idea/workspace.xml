@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="Database view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/ISimulaattorinUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/view/SimulaattorinGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/laakarisimu/Program.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="niko" />
+        <entry key="$PROJECT_DIR$" value="Main" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -152,6 +149,8 @@
       <workItem from="1678044541142" duration="95000" />
       <workItem from="1678044709117" duration="85000" />
       <workItem from="1678046663063" duration="5806000" />
+      <workItem from="1678105587496" duration="472000" />
+      <workItem from="1678111264780" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>

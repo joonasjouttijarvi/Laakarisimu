@@ -245,8 +245,10 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
 
 	}
+
 	@Override
 	public void clearDatabase(){
 		potilasDao.clearDatabase();
+		tietokanta();
 	}
 }
