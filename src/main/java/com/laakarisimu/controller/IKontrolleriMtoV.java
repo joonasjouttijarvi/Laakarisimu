@@ -1,5 +1,7 @@
 package com.laakarisimu.controller;
 
+import com.laakarisimu.simu.model.Asiakas;
+
 public interface IKontrolleriMtoV {
 
 		
