@@ -121,6 +121,9 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV{   // UUS
 	public void naytaPalkkaChart(String nimi, double palkka){
 		Platform.runLater(()-> ui.setPalkkaChart(nimi, palkka));
 	}
-
-
+	
+	@Override
+	public void tietokanta() {
+		Platform.runLater(()-> ui.tietokanta());
+	}
 }

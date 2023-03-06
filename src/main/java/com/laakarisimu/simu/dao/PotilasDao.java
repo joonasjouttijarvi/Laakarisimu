@@ -9,9 +9,9 @@ import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.Session;
-
-import java.util.List;
 
 public class PotilasDao implements IDao {
 
@@ -39,30 +39,30 @@ public class PotilasDao implements IDao {
     public void clearDatabase() {
         try {
             tx.begin();
-            em.createQuery("DELETE FROM Potilaat").executeUpdate();
+            em.createQuery("DELETE from Potilaat").executeUpdate();
+            em.createNativeQuery("ALTER TABLE Potilaat AUTO_INCREMENT = 1").executeUpdate();
             tx.commit();
-            em.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
 
     @Override
-    public List<Potilaat> getKaikkiPotilaat() {
+    public ObservableList<Potilaat> getKaikkiPotilaat() {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Potilaat> cq = cb.createQuery(Potilaat.class);
         Root<Potilaat> rootEntry = cq.from(Potilaat.class);
         CriteriaQuery<Potilaat> all = cq.select(rootEntry);
-
         TypedQuery<Potilaat> allQuery = session.createQuery(all);
-        return allQuery.getResultList();
+        return FXCollections.observableArrayList(allQuery.getResultList());
     }
 
     @Override
     public void getPotilasById(int id) {
         try {
             tx.begin();
-            em.createQuery("SELECT * FROM Potilaat WHERE p.id = :id").setParameter("id", id).getResultList();
+            em.createQuery("SELECT * FROM Potilaat WHERE Potilaat.id = :id").setParameter("id", id).getResultList();
             tx.commit();
             em.close();
         } catch (Exception e) {

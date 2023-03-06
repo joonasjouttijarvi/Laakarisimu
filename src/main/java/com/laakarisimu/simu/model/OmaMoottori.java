@@ -1,6 +1,8 @@
 package com.laakarisimu.simu.model;
 import java.text.DecimalFormat;
 
+import javax.sound.sampled.Port;
+
 import com.laakarisimu.controller.IKontrolleriMtoV;
 import com.laakarisimu.eduni.distributions.Negexp;
 import com.laakarisimu.eduni.distributions.Normal;
@@ -9,26 +11,26 @@ import com.laakarisimu.simu.dao.IDao;
 import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.*;
 
+import entity.Potilaat;
+
 public class OmaMoottori extends Moottori {
 	
 	private Saapumisprosessi saapumisprosessi;
 	private IDao dao = new PotilasDao();
+	Potilaat potilas = new Potilaat();
 
 
 	public OmaMoottori(IKontrolleriMtoV kontrolleri){
 
 		super(kontrolleri);
 
-		sairaanhoitaja = new Sairaanhoitaja(new Normal(getSairaanhoitajanPalveluaika(),7), tapahtumalista, TapahtumanTyyppi.SAIRAANHOITAJAN_PALVELU);
-		laakari= new Laakari(new Normal(getLaakarinPalveluaika(),6), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
+		sairaanhoitaja = new Sairaanhoitaja(new Normal(getSairaanhoitajanPalveluaika(),40), tapahtumalista, TapahtumanTyyppi.SAIRAANHOITAJAN_PALVELU);
+		laakari= new Laakari(new Normal(getLaakarinPalveluaika(),16), tapahtumalista, TapahtumanTyyppi.LAAKARIN_PALVELU);
 		kassa = new Kassa(new Normal(getKassanPalveluaika(),6), tapahtumalista, TapahtumanTyyppi.KASSAN_PALVELU);
 		
-		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),2), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
+		saapumisprosessi = new Saapumisprosessi(new Negexp(getAsiakkaanSaapumisTiheys(),4), tapahtumalista, TapahtumanTyyppi.SAAPUMINEN);
 
 	}
-
-	
-
 	@Override
 	protected void alustukset() {
 		saapumisprosessi.generoiSeuraava(); // Ensimmäinen saapuminen järjestelmään
@@ -102,6 +104,7 @@ public class OmaMoottori extends Moottori {
 		kontrolleri.naytaPalkkaChart("lääkärin palkka", laakari.getLaakarinKustannukset());
 		kontrolleri.naytaPalkkaChart("Sairaanhoitajan palkka", sairaanhoitaja.getSairaanhoitajanKustannukset());
 		kontrolleri.naytaPalkkaChart("Kokonaiskustannukset", laakari.getLaakarinKustannukset()+sairaanhoitaja.getSairaanhoitajanKustannukset());
+		kontrolleri.tietokanta();
 		}
 
 	@Override

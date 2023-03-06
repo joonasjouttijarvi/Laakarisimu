@@ -2,28 +2,25 @@ package com.laakarisimu.view;
 
 import com.laakarisimu.controller.IKontrolleriVtoM;
 import com.laakarisimu.controller.Kontrolleri;
+import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Trace;
+import entity.Potilaat;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.Map.Entry;
+
 
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
+
 
 	@FXML
 	private TextField asiakkaanSaapumisTiheys;
@@ -39,14 +36,14 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private TextField viive;
 
 	@FXML
-	BarChart<String, Number> palvellutAsiakkaatChart;
+	private BarChart<String, Number> palvellutAsiakkaatChart;
 	@FXML
-	BarChart<String, Number> hoidontarveChart;
+	private BarChart<String, Number> hoidontarveChart;
 	@FXML
-	BarChart<String, Number> hoidonkestoChart;
+	private BarChart<String, Number> hoidonkestoChart;
 	@FXML
-	BarChart<String, Number> palkkaChart;
-
+	private BarChart<String, Number> palkkaChart;
+	
 	@FXML
 	private Label tulos;
 	@FXML
@@ -73,19 +70,18 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@Override
 	public void start(Stage primaryStage) {
-		// Käyttöliittymän rakentaminen
+
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../Program.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Lääkäriasema");
+			primaryStage.setResizable(true);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
-	// Käyttöliittymän rajapintametodit (kutsutaan kontrollerista)
 
 	@Override
 	public double getAika() {
@@ -144,7 +140,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		hoidontarveVakava.setText(Double.toString(vakava));
 	}
 
-	// JavaFX-sovelluksen (käyttöliittymän) käynnistäminen
 
 	public static void main(String[] args) {
 		launch(args);
@@ -196,7 +191,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		progressBar.setProgress(progress);
 	}
 
-	// update bar chart with data
+	
 	@Override
 	public void setPalvellutAsiakkaatChart(String nimi, int maara) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
@@ -227,5 +222,31 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		series.setName(nimi);
 		series.getData().add(new XYChart.Data<>("", palkka));
 		palkkaChart.getData().add(series);
+	}
+	@FXML
+	private TableView<Potilaat> tietokantaView;
+	@FXML
+	private TableColumn<Potilaat, Integer> idColumn;
+	@FXML
+	private TableColumn<Potilaat, String> hoidontarveColumn;
+	@FXML
+	private TableColumn<Potilaat, Double> jonotusaikaColumn;
+	@FXML
+	private TableColumn<Potilaat, Double> palveluaikaColumn;
+
+	PotilasDao potilasDao=new PotilasDao();
+
+	@Override
+	public void tietokanta() {
+		idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+		hoidontarveColumn.setCellValueFactory(new PropertyValueFactory<>("hoidontarve"));
+		jonotusaikaColumn.setCellValueFactory(new PropertyValueFactory<>("jonotusaika"));
+		palveluaikaColumn.setCellValueFactory(new PropertyValueFactory<>("palveluaika"));
+		tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
+
+	}
+	@Override
+	public void clearDatabase(){
+		potilasDao.clearDatabase();
 	}
 }
