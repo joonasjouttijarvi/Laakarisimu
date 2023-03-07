@@ -5,12 +5,26 @@ package com.laakarisimu.eduni.distributions;
  */
 public abstract class Generator implements Seedable {
     protected Distributions distrib;
-    Generator () { distrib = new Distributions(); }
-    Generator (long seed) { distrib = new Distributions(seed); }
-    
+
+    Generator() {
+        distrib = new Distributions();
+    }
+
+    Generator(long seed) {
+        distrib = new Distributions(seed);
+    }
+
+    public long getSeed() {
+        return distrib.source.getSeed();
+    }
+
     // ----- implements Seedable { -----
-    public void setSeed(long seed) { distrib.source.setSeed(seed); }
-    public long getSeed() { return distrib.source.getSeed(); }
-    public void reseed() { distrib.source.reseed(); }
+    public void setSeed(long seed) {
+        distrib.source.setSeed(seed);
+    }
+
+    public void reseed() {
+        distrib.source.reseed();
+    }
     // ----- } implements Seedable -----
 }

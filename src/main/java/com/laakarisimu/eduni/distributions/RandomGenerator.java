@@ -11,8 +11,9 @@ package com.laakarisimu.eduni.distributions;
  * The seed (<code>Y[0]</code>) provided is used to generate a sequence of pseudorandom
  * numbers uniformly distributed between <code>0</code> and <code>1</code>. The cycle of the generator
  * is <code>2<sup>31</sup>-2</code>.
- * @version 1.0, 2 October 2002
+ *
  * @author F.Mallet from Costas Simatos original
+ * @version 1.0, 2 October 2002
  */
 
 public class RandomGenerator implements ContinuousGenerator {
@@ -22,13 +23,18 @@ public class RandomGenerator implements ContinuousGenerator {
     private final long m = 2147483647;
     // The last computed random number
     private long seed;
-    
-    public RandomGenerator () { reseed(); }
-    public RandomGenerator (long seed) { setSeed(seed); }
-    
+
+    public RandomGenerator() {
+        reseed();
+    }
+
+    public RandomGenerator(long seed) {
+        setSeed(seed);
+    }
+
     // ----- implements ContinuousGenerator { -----
-    public double sample() { 
-	return ((double)nextLong()) / m;
+    public double sample() {
+        return ((double) nextLong()) / m;
     }
     // ----- } implements ContinuousGenerator -----
 
@@ -36,12 +42,20 @@ public class RandomGenerator implements ContinuousGenerator {
      * @return The next long random number in the sequence
      */
     public long nextLong() {
-	return seed = (a * seed) % m;
+        return seed = (a * seed) % m;
     }
-    
+
+    public long getSeed() {
+        return seed;
+    }
+
     // ----- implements Seedable { -----
-    public void setSeed(long seed) { this.seed = seed; }
-    public long getSeed() { return seed; }
-    public void reseed() { this.seed = SeedGenerator.getDefaultSeedGenerator().sample(); }
+    public void setSeed(long seed) {
+        this.seed = seed;
+    }
+
+    public void reseed() {
+        this.seed = SeedGenerator.getDefaultSeedGenerator().sample();
+    }
     // ----- } implements Seedable -----
 }

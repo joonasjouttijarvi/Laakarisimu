@@ -8,99 +8,102 @@ import com.laakarisimu.simu.model.Laakari;
 import com.laakarisimu.simu.model.Sairaanhoitaja;
 
 public abstract class Moottori extends Thread implements IMoottori {
-	
-	private double simulointiaika = 0;
-	private long viive=0;
-	private Kello kello;
-	
-	protected Tapahtumalista tapahtumalista;
-	protected Sairaanhoitaja sairaanhoitaja;
-	protected Laakari laakari;
-	protected Kassa kassa;
-	protected Asiakas asiakas;
-	protected IKontrolleriMtoV kontrolleri;
-	
 
-	public Moottori(IKontrolleriMtoV kontrolleri){
-
-		this.kontrolleri=kontrolleri;
-
-		kello = Kello.getInstance();
-		
-		tapahtumalista = new Tapahtumalista();
-
-	}
-
-	public void setSimulointiaika(double aika) {
-		simulointiaika = aika;
-	}
+    protected Tapahtumalista tapahtumalista;
+    protected Sairaanhoitaja sairaanhoitaja;
+    protected Laakari laakari;
+    protected Kassa kassa;
+    protected Asiakas asiakas;
+    protected IKontrolleriMtoV kontrolleri;
+    private double simulointiaika = 0;
+    private long viive = 0;
+    private final Kello kello;
 
 
-	@Override
-	public long getViive() {
-		return viive;
-	}
-	@Override
-	public void setViive(long viive) {
-		this.viive = viive;
-	}
+    public Moottori(IKontrolleriMtoV kontrolleri) {
 
-	@Override
-	public double getProgress() {
-		return kello.getAika()/simulointiaika;
-	}
-	@Override
-	public void run(){
-		alustukset();
-		while (simuloidaan()){
-			viive();
-			kello.setAika(nykyaika());
-			suoritaBTapahtumat();
-			yritaCTapahtumat();
-		}
-		tulokset();
+        this.kontrolleri = kontrolleri;
 
-	}
-	
-	private void suoritaBTapahtumat(){
-		while (tapahtumalista.getSeuraavanAika() == kello.getAika()){
-			suoritaTapahtuma(tapahtumalista.poista());
-		}
-	}
+        kello = Kello.getInstance();
 
-	private void yritaCTapahtumat(){
-			if (!sairaanhoitaja.onVarattu() && sairaanhoitaja.onJonossa()){
-				sairaanhoitaja.aloitaPalvelu();
-			}
-			if (!laakari.onVarattu() && laakari.onJonossa()){
-				laakari.aloitaPalvelu();
+        tapahtumalista = new Tapahtumalista();
 
-			}
-			if (!kassa.onVarattu() && kassa.onJonossa()){
-				kassa.aloitaPalvelu();
-			}
+    }
 
-	}
-		
-	private double nykyaika(){
-		return tapahtumalista.getSeuraavanAika();
-	}
-	
-	private boolean simuloidaan(){
-		return kello.getAika() < simulointiaika;
-	}
-	private void viive() { // UUSI
-		Trace.out(Trace.Level.INFO, "Viive " + viive);
-		try {
-			sleep(viive);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	protected abstract void alustukset();
-	
-	protected abstract void suoritaTapahtuma(Tapahtuma t);
-	
-	protected abstract void tulokset();
-	
+    public void setSimulointiaika(double aika) {
+        simulointiaika = aika;
+    }
+
+
+    @Override
+    public long getViive() {
+        return viive;
+    }
+
+    @Override
+    public void setViive(long viive) {
+        this.viive = viive;
+    }
+
+    @Override
+    public double getProgress() {
+        return kello.getAika() / simulointiaika;
+    }
+
+    @Override
+    public void run() {
+        alustukset();
+        while (simuloidaan()) {
+            viive();
+            kello.setAika(nykyaika());
+            suoritaBTapahtumat();
+            yritaCTapahtumat();
+        }
+        tulokset();
+
+    }
+
+    private void suoritaBTapahtumat() {
+        while (tapahtumalista.getSeuraavanAika() == kello.getAika()) {
+            suoritaTapahtuma(tapahtumalista.poista());
+        }
+    }
+
+    private void yritaCTapahtumat() {
+        if (!sairaanhoitaja.onVarattu() && sairaanhoitaja.onJonossa()) {
+            sairaanhoitaja.aloitaPalvelu();
+        }
+        if (!laakari.onVarattu() && laakari.onJonossa()) {
+            laakari.aloitaPalvelu();
+
+        }
+        if (!kassa.onVarattu() && kassa.onJonossa()) {
+            kassa.aloitaPalvelu();
+        }
+
+    }
+
+    private double nykyaika() {
+        return tapahtumalista.getSeuraavanAika();
+    }
+
+    private boolean simuloidaan() {
+        return kello.getAika() < simulointiaika;
+    }
+
+    private void viive() { // UUSI
+        Trace.out(Trace.Level.INFO, "Viive " + viive);
+        try {
+            sleep(viive);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected abstract void alustukset();
+
+    protected abstract void suoritaTapahtuma(Tapahtuma t);
+
+    protected abstract void tulokset();
+
 }

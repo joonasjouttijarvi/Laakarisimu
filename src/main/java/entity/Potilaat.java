@@ -2,6 +2,8 @@ package entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 public class Potilaat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,14 +60,11 @@ public class Potilaat {
         Potilaat potilaat = (Potilaat) o;
 
         if (id != potilaat.id) return false;
-        if (jonotusaika != null ? !jonotusaika.equals(potilaat.jonotusaika) : potilaat.jonotusaika != null)
+        if (!Objects.equals(jonotusaika, potilaat.jonotusaika))
             return false;
-        if (hoidontarve != null ? !hoidontarve.equals(potilaat.hoidontarve) : potilaat.hoidontarve != null)
+        if (!Objects.equals(hoidontarve, potilaat.hoidontarve))
             return false;
-        if (palveluaika != null ? !palveluaika.equals(potilaat.palveluaika) : potilaat.palveluaika != null)
-            return false;
-
-        return true;
+        return Objects.equals(palveluaika, potilaat.palveluaika);
     }
 
     @Override

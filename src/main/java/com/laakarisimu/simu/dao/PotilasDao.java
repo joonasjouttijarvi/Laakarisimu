@@ -46,7 +46,7 @@ public class PotilasDao implements IDao {
             e.printStackTrace();
         }
     }
-    
+
 
     @Override
     public ObservableList<Potilaat> getKaikkiPotilaat() {

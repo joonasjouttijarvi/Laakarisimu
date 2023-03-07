@@ -2,7 +2,6 @@ package com.laakarisimu.simu.model;
 
 
 import com.laakarisimu.eduni.distributions.Negexp;
-import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Kello;
 import com.laakarisimu.simu.framework.Trace;
 
@@ -22,7 +21,7 @@ public class Asiakas {
 
 	private double palveluaika;
 	private hoidontarve hoidontarve;
-	
+
 	public static int lieva=0;
 	public static int kohtalainen=0;
 	public static int vakava=0;
@@ -63,13 +62,13 @@ public class Asiakas {
 	}
 
 	public void setJonotusAika() {
-		jonotusAika = +Kello.getInstance().getAika() - saapumisaika;
+		jonotusAika =+ Kello.getInstance().getAika() - saapumisaika;
 	}
 	// calculate individual asiakas service time - time in queue
 	public void setPalveluaika(double palveluaika) {
 		this.palveluaika=+ palveluaika;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -87,15 +86,15 @@ public class Asiakas {
 			hoidontarve = hoidontarve.VAKAVA;
 			vakava++;
 		}
-		
+
 	}
 	//getter for hoidontarve
 	public hoidontarve getHoidontarve() {
 		return hoidontarve;
 	}
-	
-		
-	
+
+
+
 
 	public void raportti() {
 		Trace.out(Trace.Level.INFO, "\nAsiakas " + id + " valmis! ");
@@ -111,8 +110,8 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "hoidontarpeet: lieva" + lieva + " kohtalainen" + kohtalainen + " vakava" + vakava);
 
 
-		
-		
+
+
 	}
 }
 
