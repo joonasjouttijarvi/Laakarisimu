@@ -25,13 +25,10 @@ public abstract class Moottori extends Thread implements IMoottori {
 
 		this.kontrolleri=kontrolleri;
 
-		kello = Kello.getInstance(); // Otetaan kello muuttujaan yksinkertaistamaan koodia
+		kello = Kello.getInstance();
 		
 		tapahtumalista = new Tapahtumalista();
-		
-		// Palvelupisteet luodaan simu.model-pakkauksessa Moottorin aliluokassa 
-		
-		
+
 	}
 
 	public void setSimulointiaika(double aika) {
@@ -39,24 +36,24 @@ public abstract class Moottori extends Thread implements IMoottori {
 	}
 
 
-	@Override // UUSI
+	@Override
 	public long getViive() {
 		return viive;
 	}
-	@Override // UUSI
+	@Override
 	public void setViive(long viive) {
 		this.viive = viive;
 	}
-	//progress of simulation in double between 0 and 1
+
 	@Override
 	public double getProgress() {
 		return kello.getAika()/simulointiaika;
 	}
 	@Override
-	public void run(){ // Entinen aja()
-		alustukset(); // luodaan mm. ensimmäinen tapahtuma
+	public void run(){
+		alustukset();
 		while (simuloidaan()){
-			viive(); // UUSI
+			viive();
 			kello.setAika(nykyaika());
 			suoritaBTapahtumat();
 			yritaCTapahtumat();
@@ -100,10 +97,10 @@ public abstract class Moottori extends Thread implements IMoottori {
 			e.printStackTrace();
 		}
 	}
-	protected abstract void alustukset(); // Määritellään simu.model-pakkauksessa Moottorin aliluokassa
+	protected abstract void alustukset();
 	
-	protected abstract void suoritaTapahtuma(Tapahtuma t);  // Määritellään simu.model-pakkauksessa Moottorin aliluokassa
+	protected abstract void suoritaTapahtuma(Tapahtuma t);
 	
-	protected abstract void tulokset(); // Määritellään simu.model-pakkauksessa Moottorin aliluokassa
+	protected abstract void tulokset();
 	
 }

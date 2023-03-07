@@ -43,7 +43,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private BarChart<String, Number> hoidonkestoChart;
 	@FXML
 	private BarChart<String, Number> palkkaChart;
-	
+
 	@FXML
 	private Label tulos;
 	@FXML
@@ -67,6 +67,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private ProgressBar progressBar;
 
 	private IKontrolleriVtoM kontrolleri;
+	private final Alert alert = new Alert(Alert.AlertType.ERROR);
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -85,12 +86,44 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@Override
 	public double getAika() {
-		return Double.parseDouble(aika.getText());
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		if (aika.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (aika.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Integer.parseInt(aika.getText()) < 1 || Integer.parseInt(aika.getText()) > 1000000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika tulee olla välillä 1-100000");
+			alert.showAndWait();
+		} else {
+			return Double.parseDouble(aika.getText());
+		}
+		return 0;
 	}
 
 	@Override
 	public long getViive() {
-		return Long.parseLong(viive.getText());
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		if (viive.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Viive ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (viive.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Viive ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Integer.parseInt(viive.getText()) < 1 || Integer.parseInt(viive.getText()) > 1000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Viive tulee olla välillä 1-100");
+			alert.showAndWait();
+		} else {
+			return Long.parseLong(viive.getText());
+		}
+		return 0;
 	}
 
 	@Override
@@ -168,23 +201,84 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
 	public double getAsiakkaanSaapumistiheys() {
-		return Double.parseDouble(asiakkaanSaapumisTiheys.getText());
+		if (asiakkaanSaapumisTiheys.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Saapumistiheys ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (asiakkaanSaapumisTiheys.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Saapumistiheys ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Double.parseDouble(viive.getText()) < 1 || Integer.parseInt(asiakkaanSaapumisTiheys.getText()) > 1000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Saapumistiheys tulee olla välillä 1-1000");
+			alert.showAndWait();
+		} else {
+			return Long.parseLong(asiakkaanSaapumisTiheys.getText());
+		}
+		return 0;
 	}
 
 	@FXML
 	public double getSairaanhoitajanPalveluaika() {
-		return Double.parseDouble(sairaanhoitajanPalveluaika.getText());
+		if (sairaanhoitajanPalveluaika.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Sairaanhoitajan palveluaika ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (sairaanhoitajanPalveluaika.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Sairaanhoitajan palveluaika ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Integer.parseInt(sairaanhoitajanPalveluaika.getText()) < 1 || Integer.parseInt(laakarinPalveluaika.getText()) > 1000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Sairaanhoitajan palveluaika tulee olla välillä 1-1000");
+			alert.showAndWait();
+		} else {
+			return Long.parseLong(viive.getText());
+		}
+		return 0;
 	}
 
 	@FXML
 	public double getLaakarinPalveluaika() {
-		return Double.parseDouble(laakarinPalveluaika.getText());
+		if (laakarinPalveluaika.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (laakarinPalveluaika.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Integer.parseInt(laakarinPalveluaika.getText()) < 1 || Integer.parseInt(laakarinPalveluaika.getText()) > 1000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Aika tulee olla välillä 1-100000");
+			alert.showAndWait();
+		} else {
+			return Long.parseLong(laakarinPalveluaika.getText());
+		}
+		return 0;
 	}
 
 	@FXML
 	public double getKassanPalveluaika() {
-		return Double.parseDouble(kassanPalveluaika.getText());
+		if (kassanPalveluaika.getText().isEmpty()) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Kassan palveluaika ei voi olla tyhjä");
+			alert.showAndWait();
+		} else if (kassanPalveluaika.getText().matches("[a-zA-Z]+")) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Kassan palveluaika ei voi olla kirjaimia");
+			alert.showAndWait();
+		} else if (Integer.parseInt(kassanPalveluaika.getText()) < 1 || Integer.parseInt(kassanPalveluaika.getText()) > 1000) {
+			alert.setTitle("Virhe");
+			alert.setHeaderText("Kassan palveluaika tulee olla välillä 1-1000");
+			alert.showAndWait();
+		} else {
+			return Long.parseLong(kassanPalveluaika.getText());
+		}
+		return 0;
 	}
+
 
 	@Override
 	public void setProgress(double progress) {
