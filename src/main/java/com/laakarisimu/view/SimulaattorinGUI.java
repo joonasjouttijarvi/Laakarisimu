@@ -70,6 +70,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private final Alert alertERROR = new Alert(Alert.AlertType.ERROR);
 	private final Alert alertINFO = new Alert(Alert.AlertType.INFORMATION);
 	private final Alert alertCONFIRM = new Alert(Alert.AlertType.CONFIRMATION);
+	private boolean simulaationKaynistys=false;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -92,21 +93,27 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 			alertERROR.setTitle("Virhe");
 			alertERROR.setHeaderText("Aika ei voi olla tyhjä");
 			alertERROR.showAndWait();
+			
 		} else if (aika.getText().matches("[a-zA-Z]+")) {
 			alertERROR.setTitle("Virhe");
 			alertERROR.setHeaderText("Aika ei voi olla kirjaimia");
+			
 			alertERROR.showAndWait();
 		} else if (Integer.parseInt(aika.getText()) < 10 || Integer.parseInt(aika.getText()) > 1000000) {
 			alertERROR.setTitle("Virhe");
 			alertERROR.setHeaderText("Aika tulee olla välillä 1-100000");
+			
 			alertERROR.showAndWait();
 		} else {
+			simulaationKaynistys = true;
 			return Double.parseDouble(aika.getText());
 		}
 	}catch (Exception e){
 		alertINFO.showAndWait();
+		
 	}
-		return 0;
+	simulaationKaynistys = false;
+	return 0;
 	}
 
 	@Override
@@ -126,11 +133,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Viive tulee olla välillä 1-100");
 				alertERROR.showAndWait();
 			} else {
+				simulaationKaynistys = true;
 				return Long.parseLong(viive.getText());
 			}
 		}catch (Exception e){
 			alertINFO.showAndWait();
 		}
+		simulaationKaynistys = false;
 		return 0;
 	}
 
@@ -191,10 +200,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		kontrolleri = new Kontrolleri(this);
 	}
 
-	@FXML
-	private void kaynnista() {
-		kontrolleri.kaynnistaSimulointi();
-	}
 
 	@FXML
 	private void hidasta() {
@@ -223,11 +228,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Saapumistiheys tulee olla välillä 10-1000");
 				alertERROR.showAndWait();
 			} else {
+				simulaationKaynistys = true;
 				return Long.parseLong(asiakkaanSaapumisTiheys.getText());
 			}
 		} catch (Exception e) {
 			alertERROR.showAndWait();
 		}
+		simulaationKaynistys = false;
 		return 0;
 	}
 
@@ -248,11 +255,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Sairaanhoitajan palveluaika tulee olla välillä 1-1000");
 				alertERROR.showAndWait();
 			} else {
+				simulaationKaynistys = true;
 				return Long.parseLong(sairaanhoitajanPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertERROR.showAndWait();
 		}
+		simulaationKaynistys = false;
 		return 0;
 	}
 
@@ -273,11 +282,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Aika tulee olla välillä 1-100000");
 				alertERROR.showAndWait();
 			} else {
+				simulaationKaynistys = true;
 				return Long.parseLong(laakarinPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertINFO.showAndWait();
 		}
+		simulaationKaynistys = false;
 		return 0;
 	}
 
@@ -298,11 +309,13 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Kassan palveluaika tulee olla välillä 1-1000");
 				alertERROR.showAndWait();
 			} else {
+				simulaationKaynistys = true;
 				return Long.parseLong(kassanPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertINFO.showAndWait();
 		}
+		simulaationKaynistys = false;
 		return 0;
 	}
 
@@ -379,6 +392,16 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 			}
 		} catch (Exception e) {
 			alertINFO.showAndWait();
+		}
+	}
+	@FXML
+	private void kaynnista() {
+		if (getAika()==0|| getViive()==0|| getAsiakkaanSaapumistiheys()==0||getKassanPalveluaika()==0||getLaakarinPalveluaika()==0||getSairaanhoitajanPalveluaika()==0) {
+			alertERROR.setTitle("Virhe");
+			alertERROR.setHeaderText("Tarkista syötteet");
+			alertERROR.showAndWait();
+		} else {
+			kontrolleri.kaynnistaSimulointi();
 		}
 	}
 }
