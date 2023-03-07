@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Laakarisimu__" />
         <module name="Laakariasemasimulaattori" />
         <module name="Laakarisimu 22.05.17" />
       </profile>

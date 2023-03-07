@@ -6,6 +6,7 @@ import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Trace;
 import entity.Potilaat;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -76,6 +77,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
     private TableColumn<Potilaat, Double> jonotusaikaColumn;
     @FXML
     private TableColumn<Potilaat, Double> palveluaikaColumn;
+    @FXML
+    private TextField idField;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -402,6 +406,10 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
             alertINFO.setHeaderText("Virhe");
             alertINFO.showAndWait();
         }
+    }
+    @FXML
+    public void getPotilasById(){
+        tietokantaView.setItems(potilasDao.getPotilasById(Integer.parseInt(idField.getText())));
     }
 
     @FXML

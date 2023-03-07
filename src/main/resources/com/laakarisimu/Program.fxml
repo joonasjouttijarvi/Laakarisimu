@@ -1,129 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="789.0" prefWidth="1185.0" xmlns="http://javafx.com/javafx/19"
-            fx:controller="com.laakarisimu.view.SimulaattorinGUI">
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1185.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.laakarisimu.view.SimulaattorinGUI">
     <children>
-        <BorderPane prefHeight="789.0" prefWidth="1185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane prefHeight="789.0" prefWidth="1185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <left>
-                <VBox prefHeight="844.0" prefWidth="257.0" style="-fx-background-color: #DEF2FD;"
-                      BorderPane.alignment="CENTER">
+                <VBox prefHeight="844.0" prefWidth="257.0" style="-fx-background-color: #DEF2FD;" BorderPane.alignment="CENTER">
                     <children>
-                        <HBox prefHeight="54.0" prefWidth="257.0"/>
+                        <HBox prefHeight="54.0" prefWidth="257.0" />
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="257.0">
                             <children>
-                                <TextField fx:id="aika" layoutX="16.0" layoutY="22.0" prefHeight="36.0"
-                                           prefWidth="227.0" promptText="Simulointiaika"/>
-                                <TextField fx:id="viive" layoutX="16.0" layoutY="76.0" prefHeight="36.0"
-                                           prefWidth="227.0" promptText="Viive"/>
+                                <TextField fx:id="aika" layoutX="16.0" layoutY="22.0" prefHeight="36.0" prefWidth="227.0" promptText="Simulointiaika" />
+                                <TextField fx:id="viive" layoutX="16.0" layoutY="76.0" prefHeight="36.0" prefWidth="227.0" promptText="Viive" />
                                 <HBox layoutY="112.0" prefHeight="53.0" prefWidth="257.0">
                                     <children>
-                                        <Button mnemonicParsing="false" onAction="#nopeuta" prefHeight="25.0"
-                                                prefWidth="130.0" style="-fx-background-color: #9DD9F9;" text="Nopeuta">
+                                        <Button mnemonicParsing="false" onAction="#nopeuta" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #9DD9F9;" text="Nopeuta">
                                             <HBox.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                                             </HBox.margin>
                                         </Button>
-                                        <Button mnemonicParsing="false" onAction="#hidasta" prefHeight="25.0"
-                                                prefWidth="127.0" style="-fx-background-color: #9DD9F9;" text="Hidasta">
+                                        <Button mnemonicParsing="false" onAction="#hidasta" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #9DD9F9;" text="Hidasta">
                                             <HBox.margin>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
                                             </HBox.margin>
                                         </Button>
                                     </children>
                                 </HBox>
-                                <Label layoutX="42.0" layoutY="175.0" prefHeight="18.0" prefWidth="173.0"
-                                       text="Asiakkaiden saapumistiheys">
+                                <Label layoutX="42.0" layoutY="175.0" prefHeight="18.0" prefWidth="173.0" text="Asiakkaiden saapumistiheys">
                                     <font>
-                                        <Font name="Lato Regular" size="14.0"/>
+                                        <Font name="Lato Regular" size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="asiakkaanSaapumisTiheys" layoutX="51.0" layoutY="199.0"/>
-                                <Label layoutX="43.0" layoutY="239.0" prefHeight="20.0" prefWidth="173.0"
-                                       text="Sairaanhoitajan palveluaika">
+                                <TextField fx:id="asiakkaanSaapumisTiheys" layoutX="51.0" layoutY="199.0" />
+                                <Label layoutX="43.0" layoutY="239.0" prefHeight="20.0" prefWidth="173.0" text="Sairaanhoitajan palveluaika">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="sairaanhoitajanPalveluaika" layoutX="51.0" layoutY="265.0"/>
+                                <TextField fx:id="sairaanhoitajanPalveluaika" layoutX="51.0" layoutY="265.0" />
                                 <Label layoutX="62.0" layoutY="308.0" text="Lääkärin palveluaika">
                                     <font>
-                                        <Font name="Lato Regular" size="14.0"/>
+                                        <Font name="Lato Regular" size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="laakarinPalveluaika" layoutX="50.0" layoutY="332.0"/>
+                                <TextField fx:id="laakarinPalveluaika" layoutX="50.0" layoutY="332.0" />
                                 <Label layoutX="70.0" layoutY="372.0" text="Kassan palveluaika">
                                     <font>
-                                        <Font name="Lato Regular" size="14.0"/>
+                                        <Font name="Lato Regular" size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="kassanPalveluaika" layoutX="50.0" layoutY="396.0"/>
-                                <Button alignment="BASELINE_CENTER" defaultButton="true" layoutX="46.0" layoutY="460.0"
-                                        mnemonicParsing="false" onAction="#kaynnista" prefHeight="72.0"
-                                        prefWidth="164.0" style="-fx-background-color: #9DD9F9;">
+                                <TextField fx:id="kassanPalveluaika" layoutX="50.0" layoutY="396.0" />
+                                <Button alignment="BASELINE_CENTER" defaultButton="true" layoutX="46.0" layoutY="460.0" mnemonicParsing="false" onAction="#kaynnista" prefHeight="72.0" prefWidth="164.0" style="-fx-background-color: #9DD9F9;">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <graphic>
-                                        <ImageView fitHeight="62.0" fitWidth="68.0" mouseTransparent="true"
-                                                   pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="62.0" fitWidth="68.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@icons/start.png"/>
+                                                <Image url="@icons/start.png" />
                                             </image>
                                             <effect>
-                                                <ColorAdjust/>
+                                                <ColorAdjust />
                                             </effect>
                                         </ImageView>
                                     </graphic>
                                 </Button>
                                 <HBox alignment="CENTER" layoutY="552.0" prefHeight="100.0" prefWidth="257.0">
                                     <children>
-                                        <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true"
-                                                   preserveRatio="true">
+                                        <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@icons/runningOnHold.png"/>
+                                                <Image url="@icons/runningOnHold.png" />
                                             </image>
                                         </ImageView>
                                     </children>
                                 </HBox>
-                                <ProgressBar fx:id="progressBar" layoutX="19.0" layoutY="666.0" prefHeight="28.0"
-                                             prefWidth="220.0" progress="0.0"/>
+                                <ProgressBar fx:id="progressBar" layoutX="19.0" layoutY="666.0" prefHeight="28.0" prefWidth="220.0" progress="0.0" />
                             </children>
                         </AnchorPane>
                     </children>
                 </VBox>
             </left>
             <top>
-                <HBox prefHeight="45.0" prefWidth="1228.0" style="-fx-background-color: #6DC7F6;"
-                      BorderPane.alignment="TOP_RIGHT">
+                <HBox prefHeight="45.0" prefWidth="1228.0" style="-fx-background-color: #6DC7F6;" BorderPane.alignment="TOP_RIGHT">
                     <children>
                         <Label prefHeight="47.0" prefWidth="145.0" text="Lääkäriasema" textFill="#f8f8f8">
                             <font>
-                                <Font name="Lato Regular" size="22.0"/>
+                                <Font name="Lato Regular" size="22.0" />
                             </font>
                             <HBox.margin>
-                                <Insets left="60.0"/>
+                                <Insets left="60.0" />
                             </HBox.margin>
                         </Label>
                         <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@icons/stethoscope.png"/>
+                                <Image url="@icons/stethoscope.png" />
                             </image>
                         </ImageView>
                     </children>
                 </HBox>
             </top>
             <right>
-                <VBox prefHeight="742.0" prefWidth="294.0" style="-fx-background-color: #DEF2FD;"
-                      BorderPane.alignment="CENTER">
+                <VBox prefHeight="742.0" prefWidth="294.0" style="-fx-background-color: #DEF2FD;" BorderPane.alignment="CENTER">
                     <children>
                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="260.0">
                             <children>
@@ -133,7 +134,7 @@
                                             <children>
                                                 <Label text="Simulointiaika:">
                                                     <font>
-                                                        <Font name="Lato Regular" size="16.0"/>
+                                                        <Font name="Lato Regular" size="16.0" />
                                                     </font>
                                                 </Label>
                                             </children>
@@ -142,15 +143,15 @@
                                 </HBox>
                                 <Label fx:id="tulos" alignment="CENTER" prefHeight="31.0" prefWidth="165.0" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="16.0"/>
+                                        <Font name="Lato Regular" size="16.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
                             <VBox.margin>
-                                <Insets top="20.0"/>
+                                <Insets top="20.0" />
                             </VBox.margin>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="260.0">
@@ -161,20 +162,19 @@
                                             <children>
                                                 <Label text="Palvellut asiakkaat:">
                                                     <font>
-                                                        <Font name="Lato Regular" size="16.0"/>
+                                                        <Font name="Lato Regular" size="16.0" />
                                                     </font>
                                                 </Label>
                                             </children>
                                         </HBox>
                                     </children>
                                 </HBox>
-                                <Label fx:id="kaikkiPalvellut" alignment="CENTER" prefHeight="24.0" prefWidth="132.0"
-                                       text="-">
+                                <Label fx:id="kaikkiPalvellut" alignment="CENTER" prefHeight="24.0" prefWidth="132.0" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="15.0"/>
+                                        <Font name="Lato Regular" size="15.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
@@ -185,21 +185,20 @@
                                     <children>
                                         <Label text="Lääkärin palvelemat asiakkaat:">
                                             <font>
-                                                <Font size="16.0"/>
+                                                <Font size="16.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </HBox>
-                                <Label fx:id="laakarinPalvelemat" alignment="CENTER" prefHeight="20.0" prefWidth="168.0"
-                                       text="-">
+                                <Label fx:id="laakarinPalvelemat" alignment="CENTER" prefHeight="20.0" prefWidth="168.0" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="16.0"/>
+                                        <Font name="Lato Regular" size="16.0" />
                                     </font>
                                     <opaqueInsets>
-                                        <Insets/>
+                                        <Insets />
                                     </opaqueInsets>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
@@ -210,22 +209,22 @@
                                     <children>
                                         <Label text="Sairaanhoitajan palvelemat asiakkat:">
                                             <font>
-                                                <Font name="Lato Regular" size="16.0"/>
+                                                <Font name="Lato Regular" size="16.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </HBox>
                                 <Label fx:id="sairaanhoitajanPalvelemat" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="16.0"/>
+                                        <Font name="Lato Regular" size="16.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
                             <VBox.margin>
-                                <Insets/>
+                                <Insets />
                             </VBox.margin>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="294.0">
@@ -234,17 +233,17 @@
                                     <children>
                                         <Label text="Lääkärin palkka:">
                                             <font>
-                                                <Font name="Lato Regular" size="16.0"/>
+                                                <Font name="Lato Regular" size="16.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </HBox>
                                 <Label fx:id="laakarinPalkka" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="16.0"/>
+                                        <Font name="Lato Regular" size="16.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
@@ -255,17 +254,17 @@
                                     <children>
                                         <Label text="Sairaanhoitajan palkka:">
                                             <font>
-                                                <Font name="Lato Regular" size="16.0"/>
+                                                <Font name="Lato Regular" size="16.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </HBox>
                                 <Label fx:id="sairaanhoitajanPalkka" text="-">
                                     <font>
-                                        <Font name="Lato Regular" size="16.0"/>
+                                        <Font name="Lato Regular" size="16.0" />
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="15.0"/>
+                                        <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
                             </children>
@@ -276,32 +275,32 @@
                                     <children>
                                         <Label text="Hoidontarve:">
                                             <font>
-                                                <Font name="Lato Regular" size="16.0"/>
+                                                <Font name="Lato Regular" size="16.0" />
                                             </font>
                                         </Label>
                                     </children>
                                     <VBox.margin>
-                                        <Insets/>
+                                        <Insets />
                                     </VBox.margin>
                                 </HBox>
                                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="294.0">
                                     <children>
                                         <Label text="Lievä:">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                         </Label>
                                         <Label fx:id="hoidontarveLieva" prefHeight="19.0" prefWidth="33.0" text="-">
                                             <font>
-                                                <Font size="15.0"/>
+                                                <Font size="15.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="15.0"/>
+                                                <Insets left="15.0" />
                                             </HBox.margin>
                                         </Label>
                                         <Label text="\%">
                                             <font>
-                                                <Font size="15.0"/>
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                     </children>
@@ -310,21 +309,20 @@
                                     <children>
                                         <Label text="Kohtalainen:">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="hoidontarveKohtalainen" prefHeight="19.0" prefWidth="34.0"
-                                               text="-">
+                                        <Label fx:id="hoidontarveKohtalainen" prefHeight="19.0" prefWidth="34.0" text="-">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="15.0"/>
+                                                <Insets left="15.0" />
                                             </HBox.margin>
                                         </Label>
                                         <Label text="\%">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                         </Label>
                                     </children>
@@ -333,20 +331,20 @@
                                     <children>
                                         <Label text="Vakava:">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                         </Label>
                                         <Label fx:id="hoidontarveVakava" prefHeight="19.0" prefWidth="35.0" text="-">
                                             <font>
-                                                <Font size="15.0"/>
+                                                <Font size="15.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="15.0"/>
+                                                <Insets left="15.0" />
                                             </HBox.margin>
                                         </Label>
                                         <Label text="\%">
                                             <font>
-                                                <Font name="Lato Regular" size="15.0"/>
+                                                <Font name="Lato Regular" size="15.0" />
                                             </font>
                                         </Label>
                                     </children>
@@ -357,59 +355,52 @@
                 </VBox>
             </right>
             <center>
-                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
-                         BorderPane.alignment="CENTER">
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
                         <Tab text="Kaaviot">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <GridPane layoutX="204.0" layoutY="214.0" prefHeight="713.0" prefWidth="634.0"
-                                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <GridPane layoutX="204.0" layoutY="214.0" prefHeight="713.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                             </columnConstraints>
                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
                                                 <BarChart fx:id="palvellutAsiakkaatChart" title="Palvellut asiakkaat">
                                                     <xAxis>
-                                                        <CategoryAxis label="Palvelupiste" side="BOTTOM"/>
+                                                        <CategoryAxis label="Palvelupiste" side="BOTTOM" />
                                                     </xAxis>
                                                     <yAxis>
-                                                        <NumberAxis side="LEFT"/>
+                                                        <NumberAxis side="LEFT" />
                                                     </yAxis>
                                                 </BarChart>
-                                                <BarChart fx:id="hoidontarveChart" title="Hoidontarve"
-                                                          GridPane.columnIndex="1">
+                                                <BarChart fx:id="hoidontarveChart" title="Hoidontarve" GridPane.columnIndex="1">
                                                     <xAxis>
-                                                        <CategoryAxis label="Vakavuusaste" side="BOTTOM"/>
+                                                        <CategoryAxis label="Vakavuusaste" side="BOTTOM" />
                                                     </xAxis>
                                                     <yAxis>
-                                                        <NumberAxis side="LEFT"/>
+                                                        <NumberAxis side="LEFT" />
                                                     </yAxis>
                                                 </BarChart>
-                                                <BarChart fx:id="hoidonkestoChart" title="Hoidon kesto"
-                                                          GridPane.rowIndex="1">
+                                                <BarChart fx:id="hoidonkestoChart" title="Hoidon kesto" GridPane.rowIndex="1">
                                                     <xAxis>
-                                                        <CategoryAxis label="Keskimääräinen hoidon kesto"
-                                                                      side="BOTTOM"/>
+                                                        <CategoryAxis label="Keskimääräinen hoidon kesto" side="BOTTOM" />
                                                     </xAxis>
                                                     <yAxis>
-                                                        <NumberAxis side="LEFT"/>
+                                                        <NumberAxis side="LEFT" />
                                                     </yAxis>
                                                 </BarChart>
-                                                <BarChart fx:id="palkkaChart" title="Palkat" GridPane.columnIndex="1"
-                                                          GridPane.rowIndex="1">
+                                                <BarChart fx:id="palkkaChart" title="Palkat" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                     <xAxis>
-                                                        <CategoryAxis label="Henkilökunnan palkat" side="BOTTOM"/>
+                                                        <CategoryAxis label="Henkilökunnan palkat" side="BOTTOM" />
                                                     </xAxis>
                                                     <yAxis>
-                                                        <NumberAxis side="LEFT"/>
+                                                        <NumberAxis side="LEFT" />
                                                     </yAxis>
                                                 </BarChart>
                                             </children>
@@ -422,28 +413,22 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TableView fx:id="tietokantaView" layoutY="39.0" prefHeight="674.0"
-                                                   prefWidth="634.0" AnchorPane.bottomAnchor="0.0"
-                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                                                   AnchorPane.topAnchor="39.0">
+                                        <TableView fx:id="tietokantaView" layoutY="39.0" prefHeight="674.0" prefWidth="634.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
                                             <columns>
-                                                <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID"/>
-                                                <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0"
-                                                             text="Hoidontarve"/>
-                                                <TableColumn fx:id="jonotusaikaColumn" prefWidth="176.0"
-                                                             text="Jonotusaika"/>
-                                                <TableColumn fx:id="palveluaikaColumn" prefWidth="195.0"
-                                                             text="Palveluaika"/>
+                                                <TableColumn fx:id="idColumn" prefWidth="77.0" text="ID" />
+                                                <TableColumn fx:id="hoidontarveColumn" prefWidth="185.0" text="Hoidontarve" />
+                                                <TableColumn fx:id="jonotusaikaColumn" prefWidth="176.0" text="Jonotusaika" />
+                                                <TableColumn fx:id="palveluaikaColumn" prefWidth="195.0" text="Palveluaika" />
                                             </columns>
                                         </TableView>
                                         <ButtonBar layoutX="427.0" prefHeight="40.0" prefWidth="200.0">
                                             <buttons>
-                                                <Button fx:id="update" mnemonicParsing="false" onAction="#tietokanta"
-                                                        text="Refresh"/>
-                                                <Button mnemonicParsing="false" onAction="#clearDatabase"
-                                                        text="Clear "/>
+                                                <Button fx:id="update" mnemonicParsing="false" onAction="#tietokanta" text="Refresh" />
+                                                <Button mnemonicParsing="false" onAction="#clearDatabase" text="Clear " />
                                             </buttons>
                                         </ButtonBar>
+                              <TextField fx:id="idField" layoutX="14.0" layoutY="8.0" promptText="Potilaan Id" />
+                              <Button fx:id="haeIdButton" layoutX="174.0" layoutY="9.0" mnemonicParsing="false" onAction="#getPotilasById" text="Hae" AnchorPane.leftAnchor="190.0" />
                                     </children>
                                 </AnchorPane>
                             </content>

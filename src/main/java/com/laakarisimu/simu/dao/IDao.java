@@ -2,6 +2,7 @@ package com.laakarisimu.simu.dao;
 
 import com.laakarisimu.simu.model.Asiakas;
 import entity.Potilaat;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface IDao {
 
     List<Potilaat> getKaikkiPotilaat();
 
-    void getPotilasById(int id);
+    ObservableList<Potilaat> getPotilasById(int id);
 }
