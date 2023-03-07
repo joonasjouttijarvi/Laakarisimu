@@ -19,7 +19,6 @@ import javafx.stage.Stage;
 import java.text.DecimalFormat;
 import java.util.Optional;
 
-
 public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@FXML
@@ -71,7 +70,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private final Alert alertINFO = new Alert(Alert.AlertType.INFORMATION);
 	private final Alert alertCONFIRM = new Alert(Alert.AlertType.CONFIRMATION);
 
-
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -88,32 +86,34 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 	@Override
 	public double getAika() {
-		try{
-		if (aika.getText().isEmpty()) {
-			alertERROR.setTitle("Virhe");
-			alertERROR.setHeaderText("Aika ei voi olla tyhjä");
-			alertERROR.showAndWait();
-			
-		} else if (aika.getText().matches("[a-zA-Z]+")) {
-			alertERROR.setTitle("Virhe");
-			alertERROR.setHeaderText("Aika ei voi olla kirjaimia");
-			
-			alertERROR.showAndWait();
-		} else if (Integer.parseInt(aika.getText()) <= 10 || Integer.parseInt(aika.getText()) > 1000000) {
-			alertERROR.setTitle("Virhe");
-			alertERROR.setHeaderText("Aika tulee olla välillä 10-100000");
-			
-			alertERROR.showAndWait();
-		} else {
+		try {
+			if (aika.getText().isEmpty()) {
+				alertERROR.setTitle("Virhe");
+				alertERROR.setHeaderText("Aika ei voi olla tyhjä");
+				alertERROR.showAndWait();
 
-			return Double.parseDouble(aika.getText());
+			} else if (aika.getText().matches("[a-zA-Z]+")) {
+				alertERROR.setTitle("Virhe");
+				alertERROR.setHeaderText("Aika ei voi olla kirjaimia");
+
+				alertERROR.showAndWait();
+			} else if (Integer.parseInt(aika.getText()) <= 10 || Integer.parseInt(aika.getText()) > 1000000) {
+				alertERROR.setTitle("Virhe");
+				alertERROR.setHeaderText("Aika tulee olla välillä 10-100000");
+
+				alertERROR.showAndWait();
+			} else {
+
+				return Double.parseDouble(aika.getText());
+			}
+		} catch (Exception e) {
+			alertINFO.setTitle("Virhe");
+			alertINFO.setHeaderText("Virhe");
+			alertINFO.showAndWait();
+
 		}
-	}catch (Exception e){
-		alertINFO.showAndWait();
-		
-	}
 
-	return 0;
+		return 0;
 	}
 
 	@Override
@@ -136,7 +136,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 
 				return Long.parseLong(viive.getText());
 			}
-		}catch (Exception e){
+		} catch (Exception e) {
+			alertINFO.setTitle("Virhe");
+			alertINFO.setHeaderText("Virhe");
 			alertINFO.showAndWait();
 		}
 
@@ -200,7 +202,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 		kontrolleri = new Kontrolleri(this);
 	}
 
-
 	@FXML
 	private void hidasta() {
 		kontrolleri.hidasta();
@@ -232,6 +233,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				return Long.parseLong(asiakkaanSaapumisTiheys.getText());
 			}
 		} catch (Exception e) {
+			alertINFO.setTitle("Virhe");
+			alertINFO.setHeaderText("Virhe");
 			alertERROR.showAndWait();
 		}
 
@@ -259,7 +262,9 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				return Long.parseLong(sairaanhoitajanPalveluaika.getText());
 			}
 		} catch (Exception e) {
-			alertERROR.showAndWait();
+			alertINFO.setTitle("Virhe");
+			alertINFO.setHeaderText("Virhe");
+			alertINFO.showAndWait();
 		}
 
 		return 0;
@@ -286,6 +291,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				return Long.parseLong(laakarinPalveluaika.getText());
 			}
 		} catch (Exception e) {
+			alertINFO.setTitle("Virhe");
+			alertINFO.setHeaderText("Virhe");
 			alertINFO.showAndWait();
 		}
 
@@ -313,6 +320,8 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				return Long.parseLong(kassanPalveluaika.getText());
 			}
 		} catch (Exception e) {
+			alertINFO.setHeaderText("Virhe");
+			alertINFO.setHeaderText("Virhe");
 			alertINFO.showAndWait();
 		}
 
@@ -395,16 +404,19 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
 			}
 		} catch (Exception e) {
+			alertINFO.setHeaderText("Virhe");
+			alertINFO.setHeaderText("Virhe");
 			alertINFO.showAndWait();
 		}
 	}
+
 	@FXML
 	private void kaynnista() {
-		if (getAika()==0|| getViive()==0||
-				getAsiakkaanSaapumistiheys()==0||
-				getKassanPalveluaika()==0||
-				getLaakarinPalveluaika()==0||
-				getSairaanhoitajanPalveluaika()==0) {
+		if (getAika() == 0 || getViive() == 0 ||
+				getAsiakkaanSaapumistiheys() == 0 ||
+				getKassanPalveluaika() == 0 ||
+				getLaakarinPalveluaika() == 0 ||
+				getSairaanhoitajanPalveluaika() == 0) {
 			alertERROR.setTitle("Virhe");
 			alertERROR.setHeaderText("Tarkista syötteet");
 			alertERROR.showAndWait();
