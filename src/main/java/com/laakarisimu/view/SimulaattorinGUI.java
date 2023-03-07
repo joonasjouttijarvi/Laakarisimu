@@ -217,7 +217,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Saapumistiheys ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Double.parseDouble(viive.getText()) < 10
+			} else if (Double.parseDouble(asiakkaanSaapumisTiheys.getText()) < 10
 					|| Integer.parseInt(asiakkaanSaapumisTiheys.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Saapumistiheys tulee olla välillä 10-1000");
@@ -243,12 +243,12 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setHeaderText("Sairaanhoitajan palveluaika ei voi olla kirjaimia");
 				alertERROR.showAndWait();
 			} else if (Integer.parseInt(sairaanhoitajanPalveluaika.getText()) < 10
-					|| Integer.parseInt(laakarinPalveluaika.getText()) > 1000) {
+					|| Integer.parseInt(sairaanhoitajanPalveluaika.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Sairaanhoitajan palveluaika tulee olla välillä 1-1000");
 				alertERROR.showAndWait();
 			} else {
-				return Long.parseLong(viive.getText());
+				return Long.parseLong(sairaanhoitajanPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertERROR.showAndWait();
