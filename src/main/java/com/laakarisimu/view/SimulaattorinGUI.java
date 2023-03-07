@@ -70,7 +70,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	private final Alert alertERROR = new Alert(Alert.AlertType.ERROR);
 	private final Alert alertINFO = new Alert(Alert.AlertType.INFORMATION);
 	private final Alert alertCONFIRM = new Alert(Alert.AlertType.CONFIRMATION);
-	private boolean simulaationKaynistys=false;
+
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -99,20 +99,20 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 			alertERROR.setHeaderText("Aika ei voi olla kirjaimia");
 			
 			alertERROR.showAndWait();
-		} else if (Integer.parseInt(aika.getText()) < 10 || Integer.parseInt(aika.getText()) > 1000000) {
+		} else if (Integer.parseInt(aika.getText()) <= 10 || Integer.parseInt(aika.getText()) > 1000000) {
 			alertERROR.setTitle("Virhe");
-			alertERROR.setHeaderText("Aika tulee olla välillä 1-100000");
+			alertERROR.setHeaderText("Aika tulee olla välillä 10-100000");
 			
 			alertERROR.showAndWait();
 		} else {
-			simulaationKaynistys = true;
+
 			return Double.parseDouble(aika.getText());
 		}
 	}catch (Exception e){
 		alertINFO.showAndWait();
 		
 	}
-	simulaationKaynistys = false;
+
 	return 0;
 	}
 
@@ -128,18 +128,18 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Viive ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Integer.parseInt(viive.getText()) < 10 || Integer.parseInt(viive.getText()) > 1000) {
+			} else if (Integer.parseInt(viive.getText()) < 1 || Integer.parseInt(viive.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Viive tulee olla välillä 1-100");
 				alertERROR.showAndWait();
 			} else {
-				simulaationKaynistys = true;
+
 				return Long.parseLong(viive.getText());
 			}
 		}catch (Exception e){
 			alertINFO.showAndWait();
 		}
-		simulaationKaynistys = false;
+
 		return 0;
 	}
 
@@ -222,19 +222,19 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Saapumistiheys ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Double.parseDouble(asiakkaanSaapumisTiheys.getText()) < 10
+			} else if (Double.parseDouble(asiakkaanSaapumisTiheys.getText()) <= 10
 					|| Integer.parseInt(asiakkaanSaapumisTiheys.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Saapumistiheys tulee olla välillä 10-1000");
 				alertERROR.showAndWait();
 			} else {
-				simulaationKaynistys = true;
+
 				return Long.parseLong(asiakkaanSaapumisTiheys.getText());
 			}
 		} catch (Exception e) {
 			alertERROR.showAndWait();
 		}
-		simulaationKaynistys = false;
+
 		return 0;
 	}
 
@@ -249,19 +249,19 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Sairaanhoitajan palveluaika ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Integer.parseInt(sairaanhoitajanPalveluaika.getText()) < 10
+			} else if (Integer.parseInt(sairaanhoitajanPalveluaika.getText()) <= 10
 					|| Integer.parseInt(sairaanhoitajanPalveluaika.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
-				alertERROR.setHeaderText("Sairaanhoitajan palveluaika tulee olla välillä 1-1000");
+				alertERROR.setHeaderText("Sairaanhoitajan palveluaika tulee olla välillä 10-1000");
 				alertERROR.showAndWait();
 			} else {
-				simulaationKaynistys = true;
+
 				return Long.parseLong(sairaanhoitajanPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertERROR.showAndWait();
 		}
-		simulaationKaynistys = false;
+
 		return 0;
 	}
 
@@ -276,19 +276,19 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Aika ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Integer.parseInt(laakarinPalveluaika.getText()) < 10
+			} else if (Integer.parseInt(laakarinPalveluaika.getText()) <= 10
 					|| Integer.parseInt(laakarinPalveluaika.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Aika tulee olla välillä 1-100000");
 				alertERROR.showAndWait();
 			} else {
-				simulaationKaynistys = true;
+
 				return Long.parseLong(laakarinPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertINFO.showAndWait();
 		}
-		simulaationKaynistys = false;
+
 		return 0;
 	}
 
@@ -303,19 +303,19 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Kassan palveluaika ei voi olla kirjaimia");
 				alertERROR.showAndWait();
-			} else if (Integer.parseInt(kassanPalveluaika.getText()) < 10
+			} else if (Integer.parseInt(kassanPalveluaika.getText()) <= 10
 					|| Integer.parseInt(kassanPalveluaika.getText()) > 1000) {
 				alertERROR.setTitle("Virhe");
 				alertERROR.setHeaderText("Kassan palveluaika tulee olla välillä 1-1000");
 				alertERROR.showAndWait();
 			} else {
-				simulaationKaynistys = true;
+
 				return Long.parseLong(kassanPalveluaika.getText());
 			}
 		} catch (Exception e) {
 			alertINFO.showAndWait();
 		}
-		simulaationKaynistys = false;
+
 		return 0;
 	}
 
@@ -327,32 +327,36 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@Override
 	public void setPalvellutAsiakkaatChart(String nimi, int maara) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		palkkaChart.setCategoryGap(50);
 		series.setName(nimi);
-		series.getData().add(new XYChart.Data<>("  ", maara));
+		series.getData().add(new XYChart.Data<>("", maara));
 		palvellutAsiakkaatChart.getData().add(series);
 	}
 
 	@Override
 	public void setHoidontarveChart(String nimi, double maara) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		hoidontarveChart.setCategoryGap(50);
 		series.setName(nimi);
-		series.getData().add(new XYChart.Data<>("  ", maara));
+		series.getData().add(new XYChart.Data<>("", maara));
 		hoidontarveChart.getData().add(series);
 	}
 
 	@Override
 	public void setHoidonkestoChart(String nimi, int kesto) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		hoidontarveChart.setCategoryGap(50);
 		series.setName(nimi);
-		series.getData().add(new XYChart.Data<>("    ", kesto));
+		series.getData().add(new XYChart.Data<>("", kesto));
 		hoidonkestoChart.getData().add(series);
 	}
 
 	@Override
 	public void setPalkkaChart(String nimi, double palkka) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
+		hoidontarveChart.setCategoryGap(50);
 		series.setName(nimi);
-		series.getData().add(new XYChart.Data<>("  ", palkka));
+		series.getData().add(new XYChart.Data<>("", palkka));
 		palkkaChart.getData().add(series);
 	}
 
@@ -396,7 +400,11 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	}
 	@FXML
 	private void kaynnista() {
-		if (getAika()==0|| getViive()==0|| getAsiakkaanSaapumistiheys()==0||getKassanPalveluaika()==0||getLaakarinPalveluaika()==0||getSairaanhoitajanPalveluaika()==0) {
+		if (getAika()==0|| getViive()==0||
+				getAsiakkaanSaapumistiheys()==0||
+				getKassanPalveluaika()==0||
+				getLaakarinPalveluaika()==0||
+				getSairaanhoitajanPalveluaika()==0) {
 			alertERROR.setTitle("Virhe");
 			alertERROR.setHeaderText("Tarkista syötteet");
 			alertERROR.showAndWait();
