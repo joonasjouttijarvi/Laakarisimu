@@ -345,7 +345,7 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
 	@Override
 	public void setHoidonkestoChart(String nimi, int kesto) {
 		XYChart.Series<String, Number> series = new XYChart.Series<>();
-		hoidontarveChart.setCategoryGap(50);
+		hoidonkestoChart.setCategoryGap(50);
 		series.setName(nimi);
 		series.getData().add(new XYChart.Data<>("", kesto));
 		hoidonkestoChart.getData().add(series);
