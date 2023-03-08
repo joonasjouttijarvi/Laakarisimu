@@ -23,5 +23,4 @@ public class Tapahtumalista {
         return lista.peek().getAika();
     }
 
-
 }

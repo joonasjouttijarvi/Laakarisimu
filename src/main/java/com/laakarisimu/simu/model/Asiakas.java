@@ -36,20 +36,8 @@ public class Asiakas {
 		Trace.out(Trace.Level.INFO, "Uusi asiakas nro " + id + " saapui klo " + saapumisaika);
 	}
 
-	public double getPoistumisaika() {
-		return poistumisaika;
-	}
-
 	public void setPoistumisaika(double poistumisaika) {
 		this.poistumisaika = poistumisaika;
-	}
-
-	public double getSaapumisaika() {
-		return saapumisaika;
-	}
-
-	public void setSaapumisaika(double saapumisaika) {
-		this.saapumisaika = saapumisaika;
 	}
 
 
@@ -88,7 +76,7 @@ public class Asiakas {
 		}
 
 	}
-	//getter for hoidontarve
+
 	public hoidontarve getHoidontarve() {
 		return hoidontarve;
 	}

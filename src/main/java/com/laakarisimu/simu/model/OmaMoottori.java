@@ -6,14 +6,11 @@ import com.laakarisimu.eduni.distributions.Normal;
 import com.laakarisimu.simu.dao.IDao;
 import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.*;
-import entity.Potilaat;
 
 public class OmaMoottori extends Moottori {
 
-    Potilaat potilas = new Potilaat();
     private final Saapumisprosessi saapumisprosessi;
     private final IDao dao = new PotilasDao();
-
 
     public OmaMoottori(IKontrolleriMtoV kontrolleri) {
 
