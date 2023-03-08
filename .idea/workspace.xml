@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff3657f7-fdb1-47ac-99d4-bf0e19dbc0ad" name="Changes" comment="Junit test for potilas">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/laakarisimu/simu/dao/PotilaatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/dao/PotilasDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laakarisimu/simu/model/Asiakas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Potilaat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/laakarisimu/simu/dao/PotilaatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/laakarisimu/simu/dao/PotilaatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +68,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "extract.method.default.visibility": "private",
     "last_opened_file_path": "/Users/joonas/Documents/Tivi/Metropolia/Projects/Laakarisimu/Laakarisimu",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -220,7 +215,7 @@
       <workItem from="1678226401735" duration="290000" />
       <workItem from="1678231312731" duration="1234000" />
       <workItem from="1678235461663" duration="2015000" />
-      <workItem from="1678276991057" duration="3400000" />
+      <workItem from="1678276991057" duration="4281000" />
     </task>
     <task id="LOCAL-00001" summary="mvn">
       <created>1676373670055</created>
@@ -383,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678217915422</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Junit test for potilas">
+      <created>1678280454744</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678280454744</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
