@@ -124,7 +124,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
             alertINFO.setTitle("Virhe");
             alertINFO.setHeaderText("Virhe");
             alertINFO.showAndWait();
-
         }
 
         return 0;
@@ -133,7 +132,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
     @Override
     public long getViive() {
         try {
-
             if (viive.getText().isEmpty()) {
                 alertERROR.setTitle("Virhe");
                 alertERROR.setHeaderText("Viive ei voi olla tyhjä");
@@ -386,7 +384,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
         jonotusaikaColumn.setCellValueFactory(new PropertyValueFactory<>("jonotusaika"));
         palveluaikaColumn.setCellValueFactory(new PropertyValueFactory<>("palveluaika"));
         tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
-
     }
 
     @Override
