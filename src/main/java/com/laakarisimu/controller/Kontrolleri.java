@@ -17,7 +17,6 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV {   // UU
         this.ui = ui;
     }
 
-
     // Moottorin ohjausta:
 
     @Override
@@ -26,7 +25,6 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV {   // UU
         moottori.setSimulointiaika(ui.getAika());
         moottori.setViive(ui.getViive());
         ((Thread) moottori).start();
-
     }
 
     @Override
@@ -53,7 +51,6 @@ public class Kontrolleri implements IKontrolleriVtoM, IKontrolleriMtoV {   // UU
     public double getKassanPalveluaika() {
         return ui.getKassanPalveluaika();
     }
-
 
     @Override
     public void nopeuta() { // nopeutetaan moottorisäiettä
