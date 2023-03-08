@@ -64,7 +64,7 @@ public class Asiakas {
 	public void setJonotusAika() {
 		jonotusAika =+ Kello.getInstance().getAika() - saapumisaika;
 	}
-	// calculate individual asiakas service time - time in queue
+	
 	public void setPalveluaika(double palveluaika) {
 		this.palveluaika=+ palveluaika;
 	}
@@ -92,9 +92,6 @@ public class Asiakas {
 	public hoidontarve getHoidontarve() {
 		return hoidontarve;
 	}
-
-
-
 
 	public void raportti() {
 		Trace.out(Trace.Level.INFO, "\nAsiakas " + id + " valmis! ");
