@@ -6,7 +6,6 @@ import com.laakarisimu.simu.dao.PotilasDao;
 import com.laakarisimu.simu.framework.Trace;
 import entity.Potilaat;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -125,7 +124,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
             alertINFO.setTitle("Virhe");
             alertINFO.setHeaderText("Virhe");
             alertINFO.showAndWait();
-
         }
 
         return 0;
@@ -134,7 +132,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
     @Override
     public long getViive() {
         try {
-
             if (viive.getText().isEmpty()) {
                 alertERROR.setTitle("Virhe");
                 alertERROR.setHeaderText("Viive ei voi olla tyhjä");
@@ -387,7 +384,6 @@ public class SimulaattorinGUI extends Application implements ISimulaattorinUI {
         jonotusaikaColumn.setCellValueFactory(new PropertyValueFactory<>("jonotusaika"));
         palveluaikaColumn.setCellValueFactory(new PropertyValueFactory<>("palveluaika"));
         tietokantaView.setItems(potilasDao.getKaikkiPotilaat());
-
     }
 
     @Override
