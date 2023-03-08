@@ -20,6 +20,7 @@ public class Potilaat {
     @Column(name = "palveluaika", nullable = true, precision = 0)
     private Double palveluaika;
 
+
     public int getId() {
         return id;
     }

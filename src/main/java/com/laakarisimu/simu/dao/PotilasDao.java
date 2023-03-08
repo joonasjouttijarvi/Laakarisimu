@@ -48,7 +48,7 @@ public class PotilasDao implements IDao {
     }
 
     @Override
-    public ObservableList<Potilaat> getKaikkiPotilaat() {
+    public ObservableList<Potilaat> getKaikkiPotilaat() {try{
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Potilaat> cq = cb.createQuery(Potilaat.class);
         Root<Potilaat> rootEntry = cq.from(Potilaat.class);
@@ -56,9 +56,15 @@ public class PotilasDao implements IDao {
         TypedQuery<Potilaat> allQuery = session.createQuery(all);
         return FXCollections.observableArrayList(allQuery.getResultList());
     }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     @Override
     public ObservableList<Potilaat> getPotilasById(int id) {
+        try{
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Potilaat> cq = cb.createQuery(Potilaat.class);
         Root<Potilaat> rootEntry = cq.from(Potilaat.class);
@@ -66,4 +72,10 @@ public class PotilasDao implements IDao {
         TypedQuery<Potilaat> allQuery = session.createQuery(all);
         return FXCollections.observableArrayList(allQuery.getResultList());
     }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
