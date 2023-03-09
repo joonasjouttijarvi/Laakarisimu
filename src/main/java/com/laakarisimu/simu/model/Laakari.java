@@ -67,7 +67,7 @@ public class Laakari {
     }
 
     public double getLaakarinKustannukset() {
-        return tyotunnit * palkka;
+        return tyotunnit * palkka / 100;
     }
 
     public double getTyotunnit() {

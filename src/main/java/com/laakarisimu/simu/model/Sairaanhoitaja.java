@@ -68,7 +68,7 @@ public class Sairaanhoitaja {
     }
 
     public double getSairaanhoitajanKustannukset() {
-        return tyotunnit * palkka;
+        return tyotunnit * palkka / 100;
     }
 
     public int getPalvellutAsiakkaat() {

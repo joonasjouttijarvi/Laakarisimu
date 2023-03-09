@@ -79,9 +79,9 @@ public class OmaMoottori extends Moottori {
         kontrolleri.naytaLaakarinPalvelemat(laakari.getPalvellutAsiakkaat());
         kontrolleri.naytaLaakarinPalkka(laakari.getLaakarinKustannukset());
         kontrolleri.naytaSairaanhoitajanPalkka(sairaanhoitaja.getSairaanhoitajanKustannukset());
-        double lievat = (Asiakas.lieva) * 100;
-        double kohtalaiset = (Asiakas.kohtalainen) * 100;
-        double vakavat = (Asiakas.vakava) * 100;
+        double lievat = (Asiakas.lieva);
+        double kohtalaiset = (Asiakas.kohtalainen);
+        double vakavat = (Asiakas.vakava);
         kontrolleri.naytaHoidontarveLieva((lievat));
         kontrolleri.naytaHoidontarveKohtalainen((kohtalaiset));
         kontrolleri.naytaHoidontarveVakava((vakavat));
